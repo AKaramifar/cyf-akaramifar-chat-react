@@ -1,0 +1,123 @@
+.Div_Header_Style {
+  height: 70px;
+  background-color: #000000;
+  display: flex;
+}
+.Div_Logo_Style {
+  width: 20%;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+}
+@keyframes Logo {
+  0% {
+    color: #4cdbba;
+  }
+  50% {
+    color: whitesmoke;
+  }
+  100% {
+    color: #4cdbba;
+  }
+}
+.I_Logo_Style {
+  color: #4cdbba;
+  border: 1px solid #4cdbba;
+  background-color: #151515;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  animation: Logo infinite 2s;
+}
+.P_Title_Style {
+  color: whitesmoke;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+@keyframes Start {
+  0% {
+    border: 1px solid #EE5A24;
+  }
+  50% {
+    border: 1px solid #202020;
+  }
+  100% {
+    border: 1px solid #EE5A24;
+  }
+}
+.Div_Start_Style {
+  height: 70;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Div_Start_Main_Style {
+  width: 400px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  animation: Start infinite 2s;
+}
+.I_User_Style {
+  color: #4cdbba;
+  background-color: #151515;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 2.5px;
+  animation: Logo infinite 2s;
+}
+.P_User_Style {
+  width: 275px;
+  color: whitesmoke;
+  margin-left: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.P_SignIn_Style {
+  color: #4cdbba;
+  padding: 10px;
+  font-size: 14px;
+  transition: 200ms;
+}
+.P_SignIn_Style:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+.P_SignIn_Style:hover > .Span_SignInTooltip_Style{
+    display: block;
+    animation: FadeIn 500ms;
+  }
+.Span_SignInTooltip_Style, .Span_PlusTooltip_Style{
+    display: none;
+    position: absolute;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-top: 31px;
+    margin-left: -20px;
+    color: #4cdbba;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    background-color: #202020;
+}
+.P_Plus_Style {
+  color: #4cdbba;
+  padding: 10px;
+  transition: 200ms;
+  font-size: 14px;
+}
+.P_Plus_Style:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+.P_Plus_Style:hover > .Span_PlusTooltip_Style{
+    display: block;
+    animation: FadeIn 500ms;
+}
+

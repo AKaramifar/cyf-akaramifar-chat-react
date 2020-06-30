@@ -1,0 +1,8 @@
+.Div_SignIn_Style{
+    width: 50%;
+    height: 400px;
+    margin: 30px auto;
+    border-radius: 25px;
+    animation: FadeIn 200ms;
+    background-color: #202020;
+}
