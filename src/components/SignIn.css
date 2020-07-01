@@ -1,8 +1,122 @@
-.Div_SignIn_Style{
-    width: 50%;
-    height: 400px;
-    margin: 30px auto;
-    border-radius: 25px;
-    animation: FadeIn 200ms;
-    background-color: #202020;
+@keyframes error {
+  0% {
+    box-shadow: 0px 0px 0px 1px #ee5a24;
+  }
+  50% {
+    box-shadow: 0px 0px 0px 1px #202020;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 1px #ee5a24;
+  }
+}
+@keyframes errorMessage {
+    0% {
+        color: #d35400;
+    }
+    50% {
+      color: #202020;
+    }
+    100% {
+        color: #d35400;
+    }
+  }
+.Div_SignIn_Style {
+  width: 450px;
+  margin: 30px auto;
+  border-radius: 5px;
+  border-top: 5px solid #4cdbba;
+  animation: FadeIn 200ms;
+  background-color: #202020;
+}
+.Div_SignInUserIcon_Style {
+  display: flex;
+  justify-content: center;
+}
+.I_SignInUserIcon_Style {
+  height: 100px;
+  padding-top: 50px;
+  font-size: 100px;
+  color: #4cdbba;
+}
+.Div_UserNameSignIn_Style,
+.Div_PasswordSignIn_Style,
+.Div_SignInButton_Style {
+  width: 60%;
+  height: 40px;
+  margin: 40px 20% 10px 20%;
+  background-color: #151515;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+.Div_PasswordSignIn_Style {
+  margin: 10px 20%;
+}
+.Input_UserNameSignIn_Style,
+.Input_PasswordSignIn_Style {
+  width: 70%;
+  height: 35px;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  text-indent: 10px;
+  background-color: #151515;
+  color: whitesmoke;
+  outline: none;
+}
+.Input_UserNameSignIn_Style {
+  letter-spacing: 2px;
+}
+.Input_PasswordSignIn_Style {
+  letter-spacing: 2px;
+}
+.I_Eye_Style {
+  margin-left: 5px;
+  color: #4cdbba;
+  transition: 200ms;
+}
+.I_Eye_Style:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+.Div_SignInButton_Style {
+  width: 40%;
+  margin: 20px 30% 0px 30%;
+  font-family: "Scada", sans-serif;
+  font-size: 15px;
+  color: #4cdbba;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  transition: 200ms;
+}
+.Div_SignInButton_Style:hover {
+  color: whitesmoke;
+  background-color: #181818;
+  cursor: pointer;
+}
+.Div_SignInErrorMessage_Style {
+  width: 80%;
+  height: 10px;
+  margin: 10px 10% 0px 10%;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: small;
+  display: none;
+  animation: errorMessage infinite 2s;
+}
+.Div_SignUpButton_Style {
+  color: #777777;
+  font-family: "Scada", sans-serif;
+  font-size: small;
+  width: 50%;
+  height: 40px;
+  margin: 0px 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Div_SignUpButton_Style i {
+  font-size: 12px;
 }
