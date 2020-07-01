@@ -23,18 +23,18 @@
 }
 @keyframes Logo {
   0% {
-    color: #4cdbba;
+    color: #00a693;
   }
   50% {
     color: whitesmoke;
   }
   100% {
-    color: #4cdbba;
+    color: #00a693;
   }
 }
 .I_Logo_Style {
-  color: #4cdbba;
-  border: 1px solid #4cdbba;
+  color: #00a693;
+  border: 1px solid #00a693;
   background-color: #151515;
   border-radius: 5px;
   font-size: 20px;
@@ -77,10 +77,10 @@
 }
 .Div_Start_Main_LogedIn_Style {
   animation: none;
-  border: 1px solid #34495e;
+  border: 1px solid #3c6382;
 }
 .I_User_Style {
-  color: #4cdbba;
+  color: #00a693;
   background-color: #151515;
   border-radius: 50px;
   font-size: 20px;
@@ -98,7 +98,7 @@
 .P_SignIn_Style,
 .P_SignOut_Style,
 .P_SignUp_Style {
-  color: #4cdbba;
+  color: #00a693;
   padding: 10px;
   font-size: 14px;
   transition: 200ms;
@@ -122,7 +122,7 @@
     border-radius: 5px;
     margin-top: 31px;
     margin-left: -20px;
-    color: #4cdbba;
+    color: #00a693;
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
     background-color: #202020;
@@ -134,7 +134,7 @@
   width: 20%;
   justify-content: center;
   align-items: center;
-  color: #4cdbba;
+  color: #00a693;
   display: none;
   animation: FadeIn 1s;
   animation: Logo infinite 2s;
