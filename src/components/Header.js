@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
 
-const Header = ({ signIn_Func_Parm, userState_Parm }) => {
+const Header = ({ signUp_Func_Parm, signIn_Func_Parm, userState_Parm }) => {
   return (
     <div className="Div_Header_Style">
       <div className="Div_Logo_Style">
@@ -24,14 +24,13 @@ const Header = ({ signIn_Func_Parm, userState_Parm }) => {
           )}
           {userState_Parm ? (
             <i
-              className="P_SignOut_Style fas fa-sign-out-alt"
-              onClick={() => signIn_Func_Parm(true)}
+              className="P_SignOut_Style fas fa-sign-out-alt"              
             >
               <span className="Span_SignOutTooltip_Style">Log Out</span>
             </i>
           ) : null}
           {userState_Parm ? null : (
-            <i className="P_SignUp_Style fas fa-user-plus">
+            <i className="P_SignUp_Style fas fa-user-plus" onClick={() => signUp_Func_Parm(true)}>
               <span className="Span_SignUpTooltip_Style">Sign Up</span>
             </i>
           )}

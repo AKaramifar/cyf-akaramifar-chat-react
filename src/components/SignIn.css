@@ -22,11 +22,26 @@
   }
 .Div_SignIn_Style {
   width: 450px;
+  padding-bottom: 12px;
   margin: 30px auto;
   border-radius: 5px;
   border-top: 5px solid #00a693;
+  font-family: "Scada", sans-serif;
   animation: FadeIn 200ms;
   background-color: #202020;
+}
+.Div_SignInClose_Style{
+  display: flex;
+  justify-content: flex-end;
+}
+.P_SignInClose_Style{
+  color: #00a693;
+  padding: 10px;
+  transition: 200ms;
+}
+.P_SignInClose_Style:hover{
+  color: #d35400;
+  cursor: pointer;
 }
 .Div_SignInUserIcon_Style {
   display: flex;
@@ -34,41 +49,36 @@
 }
 .I_SignInUserIcon_Style {
   height: 100px;
-  padding-top: 50px;
+  padding-top: 40px;
   font-size: 100px;
   color: #00a693;
 }
 .Div_UserNameSignIn_Style,
 .Div_PasswordSignIn_Style,
 .Div_SignInButton_Style {
-  width: 60%;
+  width: 70%;
   height: 40px;
-  margin: 40px 20% 10px 20%;
+  margin: 40px 15% 10px 15%;
   background-color: #151515;
   border-radius: 50px;
   display: flex;
   align-items: center;
 }
 .Div_PasswordSignIn_Style {
-  margin: 10px 20%;
+  margin: 10px 15%;
 }
 .Input_UserNameSignIn_Style,
 .Input_PasswordSignIn_Style {
-  width: 70%;
+  width: 75%;
   height: 35px;
   border: none;
   padding: 0px;
   margin: 0px;
-  text-indent: 10px;
+  text-indent: 5px;
   background-color: #151515;
   color: whitesmoke;
   outline: none;
-}
-.Input_UserNameSignIn_Style {
-  letter-spacing: 2px;
-}
-.Input_PasswordSignIn_Style {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .I_Eye_Style {
   margin-left: 5px;
@@ -83,7 +93,7 @@
   width: 40%;
   margin: 20px 30% 0px 30%;
   font-family: "Scada", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   color: #00a693;
   display: flex;
   align-items: center;
@@ -92,9 +102,13 @@
   transition: 200ms;
 }
 .Div_SignInButton_Style:hover {
-  color: whitesmoke;
-  background-color: #181818;
-  cursor: pointer;
+  color: #181818;
+  background-color: #00a693;
+  font-weight: bolder;
+  cursor: pointer;  
+}
+.I_SignIn_Style{
+  font-size: 14px;
 }
 .Div_SignInErrorMessage_Style {
   width: 80%;

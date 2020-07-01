@@ -1,0 +1,56 @@
+.Div_SignUp_Style {
+  width: 450px;
+  padding-bottom: 25px;
+  margin: 30px auto;
+  border-radius: 5px;
+  border-top: 5px solid #00a693;
+  animation: FadeIn 200ms;
+  background-color: #202020;
+}
+.I_Lock_Style {
+  color: #00a693;
+  background-color: #151515;
+  border-radius: 50px;
+  font-size: 15px;
+  padding: 10px;
+  margin-left: 5px;
+}
+.Div_PasswordValidState_Style {
+  width: 60%;
+  height: 3px;
+  border-radius: 2px;
+  margin: 10px 20% 10px 20%;
+  z-index: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.Div_PasswordValidStateChild_Style {
+  width: 100%;
+  display: flex;
+  flex-wrap: no-wrap;
+}
+.Div_PasswordValidStateCover_Style {
+  width: 10%;
+  height: 3px;
+  background-color: #525252;
+  z-index: 1000;
+  margin: -3px 0px; 
+}
+.Div_PoorPassword_Style,
+.Div_MidumPassword_style,
+.Div_StrongPassword_Style {
+  width: 33.333333%;
+  height: 3px;
+  /* border-radius: 2px; */
+  z-index: 0;
+}
+.Div_PoorPassword_Style {
+  background-color: #ff5722;
+}
+.Div_MidumPassword_style {
+  background-color: #ffc107;
+}
+.Div_StrongPassword_Style {
+  background-color: #32ff7e;
+}
