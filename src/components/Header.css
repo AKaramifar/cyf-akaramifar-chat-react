@@ -75,6 +75,10 @@
   align-items: center;
   animation: Start infinite 2s;
 }
+.Div_Start_Main_LogedIn_Style {
+  animation: none;
+  border: 1px solid #34495e;
+}
 .I_User_Style {
   color: #4cdbba;
   background-color: #151515;
@@ -91,21 +95,27 @@
   font-size: 14px;
   letter-spacing: 2px;
 }
-.P_SignIn_Style {
+.P_SignIn_Style,
+.P_SignOut_Style,
+.P_SignUp_Style {
   color: #4cdbba;
   padding: 10px;
   font-size: 14px;
   transition: 200ms;
 }
-.P_SignIn_Style:hover {
+.P_SignIn_Style:hover,
+.P_SignOut_Style:hover,
+.P_SignUp_Style:hover {
   color: whitesmoke;
   cursor: pointer;
 }
-.P_SignIn_Style:hover > .Span_SignInTooltip_Style{
+.P_SignIn_Style:hover > .Span_SignInTooltip_Style,
+.P_SignOut_Style:hover > .Span_SignOutTooltip_Style,
+.P_SignUp_Style:hover > .Span_SignUpTooltip_Style{
     display: block;
     animation: FadeIn 500ms;
   }
-.Span_SignInTooltip_Style, .Span_SignUpTooltip_Style{
+.Span_SignInTooltip_Style, .Span_SignUpTooltip_Style, .Span_SignOutTooltip_Style{
     display: none;
     position: absolute;
     padding: 5px 8px;
@@ -117,18 +127,23 @@
     font-size: 12px;
     background-color: #202020;
 }
-.P_SignUp_Style {
+.P_SignOut_Style{
+  margin-left: 30px;
+}
+.Div_OnlineState_Style{
+  width: 20%;
+  justify-content: center;
+  align-items: center;
   color: #4cdbba;
-  padding: 10px;
-  transition: 200ms;
+  display: none;
+  animation: FadeIn 1s;
+  animation: Logo infinite 2s;
+}
+.Div_Onlinetrue_Style{
+  display: flex;
+}
+.P_Online_Style{
+  font-family: "Scada", sans-serif;
   font-size: 14px;
+  letter-spacing: 2px;  
 }
-.P_SignUp_Style:hover {
-  color: whitesmoke;
-  cursor: pointer;
-}
-.P_SignUp_Style:hover > .Span_SignUpTooltip_Style{
-    display: block;
-    animation: FadeIn 500ms;
-}
-

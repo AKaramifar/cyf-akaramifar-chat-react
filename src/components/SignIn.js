@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignIn.css";
 
-const SignIn = ({ signIn_F_P }) => {
+const SignIn = ({ signIn_Func_Parm, setUserState_Func_Parm }) => {
   const showPassword = (e) => {
     if (e.target.className === "I_Eye_Style far fa-eye-slash") {
       e.target.className = "I_Eye_Style far fa-eye";
@@ -18,6 +18,7 @@ const SignIn = ({ signIn_F_P }) => {
     let passwordDiv = document.getElementById("Div_PasswordSignIn_JSX");
     let showErrorDiv = document.getElementById("Div_SignInErrorMessage_JSX");
     let showError = document.getElementById("P_SignInError_JSX");
+    let userTitle = document.getElementById("P_User_JSX");
     if ((userName.value === "") & (password.value === "")) {
       userNameDiv.style.animation = "error infinite 2s";
       passwordDiv.style.animation = "error infinite 2s";
@@ -30,15 +31,20 @@ const SignIn = ({ signIn_F_P }) => {
       showErrorDiv.style.display = "none";
     } else {
       fetch(
-        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${userName.value}&password=${password.value}`,  { method: "POST" }
+        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${userName.value}&password=${password.value}`,
+        { method: "POST" }
       )
         .then((Response) => Response.json())
         .then((data) => {
           showError.textContent = data;
           showErrorDiv.style.display = "block";
+          if(data === "Success"){
+            setUserState_Func_Parm(true);
+            userTitle.textContent = userName.value;
+            signIn_Func_Parm(false);
+          }
         })
-        .catch((err) => console.log(err));
-      //   signIn_F_P(false);
+        .catch((err) => console.log(err));      
     }
   };
   return (
@@ -56,7 +62,9 @@ const SignIn = ({ signIn_F_P }) => {
           type="text"
           onChange={() => {
             let userNameDiv = document.getElementById("Div_UserNameSignIn_JSX");
-            let showErrorDiv = document.getElementById("Div_SignInErrorMessage_JSX");
+            let showErrorDiv = document.getElementById(
+              "Div_SignInErrorMessage_JSX"
+            );
             userNameDiv.style.animation = "";
             showErrorDiv.style.display = "none";
           }}
@@ -71,7 +79,9 @@ const SignIn = ({ signIn_F_P }) => {
           className="Input_PasswordSignIn_Style"
           onChange={() => {
             let passwordDiv = document.getElementById("Div_PasswordSignIn_JSX");
-            let showErrorDiv = document.getElementById("Div_SignInErrorMessage_JSX");
+            let showErrorDiv = document.getElementById(
+              "Div_SignInErrorMessage_JSX"
+            );
             passwordDiv.style.animation = "";
             showErrorDiv.style.display = "none";
           }}
