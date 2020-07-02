@@ -7,25 +7,75 @@ const SignUp = ({
   setUserState_Func_Parm,
 }) => {
   const passwordValidator = (password) => {
-    // let checkPoint = 0;
-    // checkPoint= 100;
-    let cover = document.getElementById("Div_PasswordValidStateCover_JSX");
-    // if (/\d/.test(password)) {
-    //   checkPoint += 2;
-    // }
-    // if (/[a-z]/g.test(password)) {
-    //   checkPoint += 2;
-    // }
-    // if (/[A-Z]/g.test(password)) {
-    //   checkPoint += 2;
-    // }
-    // // if (/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(password)) {
-    // //   checkPoint += 2;
-    // // }
-    // if (password.length >= 8) {
-    //   checkPoint += 2;
-    // }
-    console.log(cover.style.width);
+    let numberOfValidatePass = 0;
+    let showErrorDiv = document.getElementById("Div_SignUpErrorMessage_JSX");
+    let strongPassword = document.getElementById("Div_StrongPassword_JSX");
+    let mediumPassword = document.getElementById("Div_MediumPassword_JSX");
+    let poorPassword = document.getElementById("Div_PoorPassword_JSX");
+    let passwordDiv = document.getElementById("Div_PasswordSignUp_JSX");
+    let reTypePasswordDiv = document.getElementById(
+      "Div_ReTypePasswordSignUp_JSX"
+    );
+    let passwordE = document.getElementById("Input_PasswordSignUp_JSX");
+    let reTypePassword = document.getElementById(
+      "Input_ReTypePasswordSignUp_JSX"
+    );
+    if (passwordE.value.length > 0) {
+      passwordDiv.style.animation = "none";
+      showErrorDiv.style.display = "none";
+    } else {
+      passwordDiv.style.animation = "error infinite 2s";
+    }
+    if (reTypePassword.value.length > 0) {
+      reTypePasswordDiv.style.animation = "none";
+      showErrorDiv.style.display = "none";
+    } else {
+      reTypePasswordDiv.style.animation = "error infinite 2s";
+    }
+    if (/\d/.test(password)) {
+      numberOfValidatePass += 1;
+    }
+    if (/[a-z]/g.test(password)) {
+      numberOfValidatePass += 1;
+    }
+    if (/[A-Z]/g.test(password)) {
+      numberOfValidatePass += 1;
+    }
+    if (/[-!$%^&*()#@_+|~=`{}\]:";'<>?,.]/.test(password)) {
+      numberOfValidatePass += 1;
+    }
+    if (password.length >= 8) {
+      numberOfValidatePass += 1;
+    }
+    if (numberOfValidatePass > 0 && numberOfValidatePass <= 2) {
+      poorPassword.style.display = "block";
+      mediumPassword.style.display = "none";
+      strongPassword.style.display = "none";
+    }
+    if (numberOfValidatePass > 2 && numberOfValidatePass <= 4) {
+      poorPassword.style.display = "block";
+      mediumPassword.style.display = "block";
+      strongPassword.style.display = "none";
+    }
+    if (numberOfValidatePass === 5) {
+      poorPassword.style.display = "block";
+      mediumPassword.style.display = "block";
+      strongPassword.style.display = "block";
+    }
+    if (numberOfValidatePass === 0) {
+      poorPassword.style.display = "none";
+      mediumPassword.style.display = "none";
+      strongPassword.style.display = "none";
+    }
+    if (
+      passwordE.value.length === reTypePassword.value.length &&
+      passwordE.value !== reTypePassword.value &&
+      passwordE.length > 0
+    ) {
+      console.log("true");
+      reTypePasswordDiv.style.animation = "error infinite 2s";
+      passwordDiv.style.animation = "error infinite 2s";
+    }
   };
   const showPassword = (e, element) => {
     if (e.target.className === "I_Eye_Style far fa-eye-slash") {
@@ -37,30 +87,50 @@ const SignUp = ({
     }
   };
   const formValidation = () => {
-    let userName = document.getElementById("Input_UserNameSignIn_JSX");
+    let numberOfEmptyElements = 0;
+    let userName = document.getElementById("Input_UserNameSignUp_JSX");
     let password = document.getElementById("Input_PasswordSignUp_JSX");
-    let rTPassword = document.getElementById("Input_PasswordSignUp_JSX");
-    let userNameDiv = document.getElementById("Div_UserNameSignIn_JSX");
-    let passwordDiv = document.getElementById("Div_PasswordSignIn_JSX");
-    let rTPasswordDiv = document.getElementById("Div_RTPasswordSignIn_JSX");
-    let showErrorDiv = document.getElementById("Div_SignInErrorMessage_JSX");
-    let showError = document.getElementById("P_SignInError_JSX");
-    let userTitle = document.getElementById("P_User_JSX");
-    if ((userName.value === "") && (password.value === "") && (rTPassword.value === "")) {
+    let reTypePassword = document.getElementById(
+      "Input_ReTypePasswordSignUp_JSX"
+    );
+    let userNameDiv = document.getElementById("Div_UserNameSignUp_JSX");
+    let passwordDiv = document.getElementById("Div_PasswordSignUp_JSX");
+    let reTypePasswordDiv = document.getElementById(
+      "Div_ReTypePasswordSignUp_JSX"
+    );
+    let showErrorDiv = document.getElementById("Div_SignUpErrorMessage_JSX");
+    let showError = document.getElementById("P_SignUpError_JSX");
+    let userTitle = document.getElementById("P_UserSignUp_JSX");
+    if (userName.value === "") {
+      numberOfEmptyElements += 1;
       userNameDiv.style.animation = "error infinite 2s";
+      showErrorDiv.style.display = "none";
+    } else {
+      userNameDiv.style.animation = "none";
+    }
+    if (password.value === "") {
+      numberOfEmptyElements += 1;
       passwordDiv.style.animation = "error infinite 2s";
-      rTPasswordDiv.style.animation = "error infinite 2s";
       showErrorDiv.style.display = "none";
-    } else if (userName.value === "") {
-      userNameDiv.style.animation = "error infinite 2s";
+    } else {
+      password.style.animation = "none";
+    }
+    if (reTypePassword.value === "") {
+      numberOfEmptyElements += 1;
+      reTypePasswordDiv.style.animation = "error infinite 2s";
       showErrorDiv.style.display = "none";
-    } else if (password.value === "") {
+    } else {
+      reTypePasswordDiv.style.animation = "none";
+    }
+    if (
+      password.length === reTypePassword.length &&
+      password.value !== reTypePassword.value &&
+      password.length > 0
+    ) {
+      reTypePasswordDiv.style.animation = "error infinite 2s";
       passwordDiv.style.animation = "error infinite 2s";
-      showErrorDiv.style.display = "none";
-    } else if (rTPassword.value === "") {
-        rTPasswordDiv.style.animation = "error infinite 2s";
-        showErrorDiv.style.display = "none";
-    }else {
+    }
+    if (numberOfEmptyElements === 0) {
       fetch(
         `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${userName.value}&password=${password.value}`,
         { method: "POST" }
@@ -80,101 +150,121 @@ const SignUp = ({
   };
   return (
     <div className="Div_SignUp_Style">
-      <div className="Div_SignInClose_Style">
+      <div className="Div_SignUpClose_Style">
         <i
-          className="P_SignInClose_Style fas fa-times-circle"
+          className="P_SignUpClose_Style fas fa-times-circle"
           onClick={() => signUp_Func_Parm(false)}
         ></i>
       </div>
       {/* -------------------------------------------------- */}
-      <div className="Div_SignInUserIcon_Style">
-        <i className="I_SignInUserIcon_Style fas fa-user-circle"></i>
+      <div className="Div_SignUpUserIcon_Style">
+        <i className="I_SignUpUserIcon_Style fas fa-user-circle"></i>
       </div>
-      <div id="Div_UserNameSignIn_JSX" className="Div_UserNameSignIn_Style">
+      <div id="Div_UserNameSignUp_JSX" className="Div_UserNameSignUp_Style">
         <i className="I_User_Style fas fa-user-circle"></i>
         <input
-          id="Input_UserNameSignIn_JSX"
-          className="Input_UserNameSignIn_Style"
+          id="Input_UserNameSignUp_JSX"
+          className="Input_UserNameSignUp_Style"
           spellCheck="false"
           autoComplete="off"
           placeholder="Type Your User Name..."
           type="text"
           onChange={() => {
-            let userNameDiv = document.getElementById("Div_UserNameSignIn_JSX");
+            let userNameDiv = document.getElementById("Div_UserNameSignUp_JSX");
             let showErrorDiv = document.getElementById(
-              "Div_SignInErrorMessage_JSX"
+              "Div_SignUpErrorMessage_JSX"
             );
             userNameDiv.style.animation = "";
             showErrorDiv.style.display = "none";
           }}
         ></input>
       </div>
-      <div id="Div_PasswordSignIn_JSX" className="Div_PasswordSignIn_Style">
+      <div id="Div_PasswordSignUp_JSX" className="Div_PasswordSignUp_Style">
         <i className="I_Lock_Style fas fa-lock"></i>
         <input
           id="Input_PasswordSignUp_JSX"
           placeholder="Type Your Password..."
           type="password"
-          className="Input_PasswordSignIn_Style"
+          className="Input_PasswordSignUp_Style"
           onChange={(e) => {
-            let passwordDiv = document.getElementById("Input_PasswordSignUp_JSX");
+            let passwordDiv = document.getElementById("Div_PasswordSignUp_JSX");
             let showErrorDiv = document.getElementById(
-              "Div_SignInErrorMessage_JSX"
+              "Div_SignUpErrorMessage_JSX"
             );
             passwordValidator(e.target.value);
-            passwordDiv.style.animation = "";
-            showErrorDiv.style.display = "none";
+            // passwordDiv.style.animation = "";
+            // showErrorDiv.style.display = "none";
           }}
         ></input>
         <i
           className="I_Eye_Style far fa-eye"
           onClick={(e) => {
-            showPassword(e,"Input_PasswordSignUp_JSX");
-          }}
-        ></i>
-      </div>
-      <div id="Div_RTPasswordSignIn_JSX" className="Div_PasswordSignIn_Style">
-        <i className="I_Lock_Style fas fa-lock"></i>
-        <input
-          id="Input_RTPasswordSignUp_JS"
-          placeholder="Re-Type Your Password..."
-          type="password"
-          className="Input_PasswordSignIn_Style"
-          onChange={() => {
-            let passwordDiv = document.getElementById("Input_RTPasswordSignUp_JS");
-            let showErrorDiv = document.getElementById(
-              "Div_SignInErrorMessage_JSX"
-            );
-            passwordDiv.style.animation = "";
-            showErrorDiv.style.display = "none";
-          }}
-        ></input>
-        <i
-          className="I_Eye_Style far fa-eye"
-          onClick={(e) => {
-            showPassword(e, "Input_RTPasswordSignUp_JS");
+            showPassword(e, "Input_PasswordSignUp_JSX");
           }}
         ></i>
       </div>
       <div className="Div_PasswordValidState_Style">
-        <div className="Div_PasswordValidStateChild_Style">
-          <div className="Div_PoorPassword_Style"></div>
-          <div className="Div_MidumPassword_style"></div>
-          <div className="Div_StrongPassword_Style"></div>
-        </div>
-        <div id="Div_PasswordValidStateCover_JSX" className="Div_PasswordValidStateCover_Style"></div>
+        <div id="Div_PoorPassword_JSX" className="Div_PoorPassword_Style"></div>
+        <div
+          id="Div_MediumPassword_JSX"
+          className="Div_MediumPassword_Style"
+        ></div>
+        <div
+          id="Div_StrongPassword_JSX"
+          className="Div_StrongPassword_Style"
+        ></div>
       </div>
       <div
-        id="Div_SignInErrorMessage_JSX"
+        id="Div_ReTypePasswordSignUp_JSX"
+        className="Div_PasswordSignUp_Style"
+      >
+        <i className="I_Lock_Style fas fa-lock"></i>
+        <input
+          id="Input_ReTypePasswordSignUp_JSX"
+          placeholder="Re-Type Your Password..."
+          type="password"
+          className="Input_PasswordSignUp_Style"
+          onChange={(e) => {
+            let reTypePasswordDiv = document.getElementById(
+              "Div_ReTypePasswordSignUp_JSX"
+            );
+            let showErrorDiv = document.getElementById(
+              "Div_SignUpErrorMessage_JSX"
+            );
+            passwordValidator(e.target.value);
+            // reTypePasswordDiv.style.animation = "";
+            // showErrorDiv.style.display = "none";
+          }}
+        ></input>
+        <i
+          className="I_Eye_Style far fa-eye"
+          onClick={(e) => {
+            showPassword(e, "Input_ReTypePasswordSignUp_JSX");
+          }}
+        ></i>
+      </div>
+      <div className="Div_ReTypePasswordValidState_Style">
+        <div id="Div_ReTypePoorPassword_JSX" className="Div_ReTypePoorPassword_Style"></div>
+        <div
+          id="Div_ReTypeMediumPassword_JSX"
+          className="Div_ReTypeMediumPassword_Style"
+        ></div>
+        <div
+          id="Div_ReTypeStrongPassword_JSX"
+          className="Div_ReTypeStrongPassword_Style"
+        ></div>
+      </div>
+      <div
+        id="Div_SignUpErrorMessage_JSX"
         className="Div_SignInErrorMessage_Style"
       >
-        <p id="P_SignInError_JSX"></p>
+        <p id="P_SignUpError_JSX"></p>
       </div>
-      <div className="Div_SignInButton_Style" onClick={() => formValidation()}>
+      <div className="Div_SignUpButton_Style" onClick={() => formValidation()}>
         Create Accunt&nbsp;&nbsp;
         <i className="fas fa-user-plus"></i>
       </div>
-      <div className="Div_SignUpButton_Style">
+      <div className="Div_SignInIcon_Style">
         &nbsp;&nbsp;&nbsp;&nbsp;Sign In
         <i
           className="P_SignUp_Style fas fa-sign-in-alt"

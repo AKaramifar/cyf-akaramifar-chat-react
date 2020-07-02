@@ -120,7 +120,7 @@
   display: none;
   animation: errorMessage infinite 2s;
 }
-.Div_SignUpButton_Style {
+.Div_SignUpIcon_Style {
   color: #777777;
   font-family: "Scada", sans-serif;
   font-size: small;
@@ -131,6 +131,6 @@
   align-items: center;
   justify-content: center;
 }
-.Div_SignUpButton_Style i {
+.Div_SignUpIcon_Style i {
   font-size: 12px;
 }

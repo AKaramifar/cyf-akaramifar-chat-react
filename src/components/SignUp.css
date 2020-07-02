@@ -15,42 +15,156 @@
   padding: 10px;
   margin-left: 5px;
 }
-.Div_PasswordValidState_Style {
+.Div_PasswordValidState_Style,
+.Div_ReTypePasswordValidState_Style {
   width: 60%;
   height: 3px;
   border-radius: 2px;
   margin: 10px 20% 10px 20%;
   z-index: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-.Div_PasswordValidStateChild_Style {
-  width: 100%;
-  display: flex;
-  flex-wrap: no-wrap;
-}
-.Div_PasswordValidStateCover_Style {
-  width: 10%;
-  height: 3px;
-  background-color: #525252;
-  z-index: 1000;
-  margin: -3px 0px; 
+  background-color: #333333;
 }
 .Div_PoorPassword_Style,
-.Div_MidumPassword_style,
-.Div_StrongPassword_Style {
+.Div_MediumPassword_Style,
+.Div_StrongPassword_Style,
+.Div_ReTypePoorPassword_Style,
+.Div_ReTypeMediumPassword_Style,
+.Div_ReTypeStrongPassword_Style
+ {
   width: 33.333333%;
+  animation: FadeIn 1s;
   height: 3px;
-  /* border-radius: 2px; */
   z-index: 0;
 }
-.Div_PoorPassword_Style {
+.Div_PoorPassword_Style,
+.Div_ReTypePoorPassword_Style {
   background-color: #ff5722;
+  display: none;
 }
-.Div_MidumPassword_style {
+.Div_MediumPassword_Style,
+.Div_ReTypeMediumPassword_Style {
   background-color: #ffc107;
+  display: none;
 }
-.Div_StrongPassword_Style {
+.Div_StrongPassword_Style,
+.Div_ReTypeStrongPassword_Style {
   background-color: #32ff7e;
+  display: none;
+}
+
+
+.Div_SignUp_Style {
+  width: 450px;
+  padding-bottom: 12px;
+  margin: 30px auto;
+  border-radius: 5px;
+  border-top: 5px solid #00a693;
+  font-family: "Scada", sans-serif;
+  animation: FadeIn 200ms;
+  background-color: #202020;
+}
+.Div_SignUpClose_Style{
+  display: flex;
+  justify-content: flex-end;
+}
+.P_SignUpClose_Style{
+  color: #00a693;
+  padding: 10px;
+  transition: 200ms;
+}
+.P_SignUpClose_Style:hover{
+  color: #d35400;
+  cursor: pointer;
+}
+.Div_SignUpUserIcon_Style {
+  display: flex;
+  justify-content: center;
+}
+.I_SignUpUserIcon_Style {
+  height: 100px;
+  padding-top: 40px;
+  font-size: 100px;
+  color: #00a693;
+}
+.Div_UserNameSignUp_Style,
+.Div_PasswordSignUp_Style,
+.Div_SignUpButton_Style {
+  width: 70%;
+  height: 40px;
+  margin: 40px 15% 10px 15%;
+  background-color: #151515;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+.Div_PasswordSignUp_Style {
+  margin: 10px 15%;
+}
+.Input_UserNameSignUp_Style,
+.Input_PasswordSignUp_Style {
+  width: 75%;
+  height: 35px;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  text-indent: 5px;
+  background-color: #151515;
+  color: whitesmoke;
+  outline: none;
+  letter-spacing: 1px;
+}
+.I_Eye_Style {
+  margin-left: 5px;
+  color: #00a693;
+  transition: 200ms;
+}
+.I_Eye_Style:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+.Div_SignUpButton_Style {
+  width: 40%;
+  margin: 20px 30% 0px 30%;
+  font-family: "Scada", sans-serif;
+  font-size: 14px;
+  color: #00a693;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  transition: 200ms;
+}
+.Div_SignUpButton_Style:hover {
+  color: #181818;
+  background-color: #00a693;
+  font-weight: bolder;
+  cursor: pointer;  
+}
+.I_SignUp_Style{
+  font-size: 14px;
+}
+.Div_SignUpErrorMessage_Style {
+  width: 80%;
+  height: 10px;
+  margin: 10px 10% 0px 10%;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-size: small;
+  display: none;
+  animation: errorMessage infinite 2s;
+}
+.Div_SignInIcon_Style {
+  color: #777777;
+  font-family: "Scada", sans-serif;
+  font-size: small;
+  width: 50%;
+  height: 40px;
+  margin: 0px 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Div_SignInIcon_Style i {
+  font-size: 12px;
 }

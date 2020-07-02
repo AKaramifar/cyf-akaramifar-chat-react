@@ -121,7 +121,7 @@ const SignIn = ({
         Sign In&nbsp;&nbsp;
         <i id="I_SignUp_JSX" className="fas fa-sign-in-alt"></i>
       </div>
-      <div className="Div_SignUpButton_Style">
+      <div className="Div_SignUpIcon_Style">
         &nbsp;&nbsp;&nbsp;&nbsp;Create Account
         <i
           className="P_SignUp_Style fas fa-user-plus"
