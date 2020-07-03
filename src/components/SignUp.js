@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 import "./SignUp.css";
 // if (
 //   password_Input.value.length === reTypePassword_Input.value.length &&
@@ -51,12 +52,11 @@ const SignUp = ({
     }
     if (password_Input.value.length >= 8) {
       numberOfValidatePass += 1;
-    }
-    else{
-      if(password_Input_Parm === "SignUp_Input_ReTypePassword_Id"){
+    } else {
+      if (password_Input_Parm === "SignUp_Input_ReTypePassword_Id") {
         setReTypePasswordValid(false);
       }
-      if(password_Input_Parm === "SignUp_Input_Password_Id"){
+      if (password_Input_Parm === "SignUp_Input_Password_Id") {
         setPasswordValid(false);
       }
     }
@@ -64,10 +64,10 @@ const SignUp = ({
       poorPassword_Div.style.display = "block";
       mediumPassword_Div.style.display = "none";
       strongPassword_Div.style.display = "none";
-      if(password_Input_Parm === "SignUp_Input_ReTypePassword_Id"){
+      if (password_Input_Parm === "SignUp_Input_ReTypePassword_Id") {
         setReTypePasswordValid(false);
       }
-      if(password_Input_Parm === "SignUp_Input_Password_Id"){
+      if (password_Input_Parm === "SignUp_Input_Password_Id") {
         setPasswordValid(false);
       }
     }
@@ -75,10 +75,10 @@ const SignUp = ({
       poorPassword_Div.style.display = "block";
       mediumPassword_Div.style.display = "block";
       strongPassword_Div.style.display = "none";
-      if(password_Input_Parm === "SignUp_Input_ReTypePassword_Id"){
+      if (password_Input_Parm === "SignUp_Input_ReTypePassword_Id") {
         setReTypePasswordValid(false);
       }
-      if(password_Input_Parm === "SignUp_Input_Password_Id"){
+      if (password_Input_Parm === "SignUp_Input_Password_Id") {
         setPasswordValid(false);
       }
     }
@@ -86,10 +86,10 @@ const SignUp = ({
       poorPassword_Div.style.display = "block";
       mediumPassword_Div.style.display = "block";
       strongPassword_Div.style.display = "block";
-      if(password_Input_Parm === "SignUp_Input_ReTypePassword_Id"){
+      if (password_Input_Parm === "SignUp_Input_ReTypePassword_Id") {
         setReTypePasswordValid(true);
       }
-      if(password_Input_Parm === "SignUp_Input_Password_Id"){
+      if (password_Input_Parm === "SignUp_Input_Password_Id") {
         setPasswordValid(true);
       }
     }
@@ -97,10 +97,10 @@ const SignUp = ({
       poorPassword_Div.style.display = "none";
       mediumPassword_Div.style.display = "none";
       strongPassword_Div.style.display = "none";
-      if(password_Input_Parm === "SignUp_Input_ReTypePassword_Id"){
+      if (password_Input_Parm === "SignUp_Input_ReTypePassword_Id") {
         setReTypePasswordValid(false);
       }
-      if(password_Input_Parm === "SignUp_Input_Password_Id"){
+      if (password_Input_Parm === "SignUp_Input_Password_Id") {
         setPasswordValid(false);
       }
     }
@@ -114,68 +114,72 @@ const SignUp = ({
       document.getElementById(password_Input_Id).type = "text";
     }
   };
-  // const formValidation = () => {
-  //   let numberOfEmptyElements = 0;
-  //   let userName = document.getElementById("Input_UserNameSignUp_JSX");
-  //   let password = document.getElementById("Input_PasswordSignUp_JSX");
-  //   let reTypePassword = document.getElementById(
-  //     "Input_ReTypePasswordSignUp_JSX"
-  //   );
-  //   let userNameDiv = document.getElementById("Div_UserNameSignUp_JSX");
-  //   let passwordDiv = document.getElementById("Div_PasswordSignUp_JSX");
-  //   let reTypePasswordDiv = document.getElementById(
-  //     "Div_ReTypePasswordSignUp_JSX"
-  //   );
-  //   let showErrorDiv = document.getElementById("Div_SignUpErrorMessage_JSX");
-  //   let showError = document.getElementById("P_SignUpError_JSX");
-  //   let userTitle = document.getElementById("P_UserSignUp_JSX");
-  //   if (userName.value === "") {
-  //     numberOfEmptyElements += 1;
-  //     userNameDiv.style.animation = "error infinite 2s";
-  //     showErrorDiv.style.display = "none";
-  //   } else {
-  //     userNameDiv.style.animation = "none";
-  //   }
-  //   if (password.value === "") {
-  //     numberOfEmptyElements += 1;
-  //     passwordDiv.style.animation = "error infinite 2s";
-  //     showErrorDiv.style.display = "none";
-  //   } else {
-  //     password.style.animation = "none";
-  //   }
-  //   if (reTypePassword.value === "") {
-  //     numberOfEmptyElements += 1;
-  //     reTypePasswordDiv.style.animation = "error infinite 2s";
-  //     showErrorDiv.style.display = "none";
-  //   } else {
-  //     reTypePasswordDiv.style.animation = "none";
-  //   }
-  //   if (
-  //     password.length === reTypePassword.length &&
-  //     password.value !== reTypePassword.value &&
-  //     password.length > 0
-  //   ) {
-  //     reTypePasswordDiv.style.animation = "error infinite 2s";
-  //     passwordDiv.style.animation = "error infinite 2s";
-  //   }
-  //   if (numberOfEmptyElements === 0) {
-  //     fetch(
-  //       `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${userName.value}&password=${password.value}`,
-  //       { method: "POST" }
-  //     )
-  //       .then((Response) => Response.json())
-  //       .then((data) => {
-  //         showError.textContent = data;
-  //         showErrorDiv.style.display = "block";
-  //         if (data === "Success") {
-  //           setUserState_Func_Parm(true);
-  //           userTitle.textContent = userName.value;
-  //           signUp_Func_Parm(false);
-  //         }
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-  // };
+  const formValidation_Func = () => {
+    let userName_Input = document.getElementById("SignUp_Input_UserName_Id");
+    let userName_Div = document.getElementById("SignUp_Div_UserName_Id");
+    let password_Input = document.getElementById("SignUp_Input_Password_Id");
+    let password_Div = document.getElementById("SignUp_Div_Password_Id");
+    let reTypePassword_Input = document.getElementById(
+      "SignUp_Input_ReTypePassword_Id"
+    );
+    let reTypePassword_Div = document.getElementById(
+      "SignUp_Div_ReTypePassword_Id"
+    );
+    let errorMessage_Div = document.getElementById(
+      "SignUp_Div_ErrorMessage_Id"
+    );
+    let signUpIcon_I = document.getElementById("SignUp_I_SignUpIcon_Id");
+    if (userName_Input.value === "") {
+      userName_Div.style.animation = "SignUp_Keyframes_Error infinite 2s";
+    }
+    if (password_Input.value === "" || passwordValid === false) {
+      password_Div.style.animation = "SignUp_Keyframes_Error infinite 2s";
+    }
+    if (reTypePassword_Input.value === "" || reTypePasswordValid === false) {
+      reTypePassword_Div.style.animation = "SignUp_Keyframes_Error infinite 2s";
+    }
+    if (reTypePassword_Input.value !== password_Input.value) {
+      errorMessage_Div.style.display = "block";
+      errorMessage_Div.textContent = "Please make sure your passwords matchs!";
+    }
+    if (
+      reTypePassword_Input.value.length === password_Input.value.length &&
+      reTypePassword_Input.value === password_Input.value &&
+      passwordValid === true &&
+      reTypePasswordValid === true
+    ) {
+      reTypePassword_Div.style.animation = "none";
+      password_Div.style.animation = "none";
+      signUpIcon_I.className =
+        "SignUp_I_SignUpIcon_CN fa fa-cog fa-spin fa-3x fa-fw";
+      fetch(`https://cyf-akaramifar-chat-node.glitch.me/newuser`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userName: userName_Input.value,
+          userPassword: password_Input.value,
+          lastOnlineTime: moment().format("MMMM Do YYYY, h:mm:ss a").toString(),
+        }),
+      })
+        .then((Response) => Response.json())
+        .then((data) => {
+          if (data !== "Sorry, This Username already taken!!!") {
+            // userTitle_P.textContent = userName_Input.value;
+            // setUserState_Func_Parm(true);
+            signUpIcon_I.className = "fas fa-user-plus";
+            // console.log(data);
+          } else {
+            signUpIcon_I.className = "fas fa-user-plus";
+            errorMessage_Div.style.display = "block";
+            errorMessage_Div.textContent = data;
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  };
   return (
     <div className="SignUp_Div_SignUp_CN">
       <div className="SignUp_Div_CloseButton_CN">
@@ -190,7 +194,7 @@ const SignUp = ({
       <div id="SignUp_Div_UserName_Id" className="SignUp_Div_UserName_CN">
         <i className="SignUp_I_UserNameIcon_CN fas fa-user-circle"></i>
         <input
-          id="SignUp_Input_UserName_JSX"
+          id="SignUp_Input_UserName_Id"
           className="SignUp_Input_UserName_CN"
           spellCheck="false"
           autoComplete="off"
@@ -247,10 +251,7 @@ const SignUp = ({
           className="SignUp_Div_StrongPassword_CN"
         ></div>
       </div>
-      <div
-        id="SignUp_Div_ReTypePassword_Id"
-        className="SignUp_Div_Password_CN"
-      >
+      <div id="SignUp_Div_ReTypePassword_Id" className="SignUp_Div_Password_CN">
         <i className="SignUp_I_LockIcon_CN fas fa-lock"></i>
         <input
           id="SignUp_Input_ReTypePassword_Id"
@@ -297,10 +298,10 @@ const SignUp = ({
       </div>
       <div
         className="SignUp_Div_SignUpButton_CN"
-        // onClick={() => formValidation_Func()}
+        onClick={() => formValidation_Func()}
       >
-        Create Accunt&nbsp;&nbsp;
-        <i className="fas fa-user-plus"></i>
+        Create Account&nbsp;&nbsp;
+        <i id="SignUp_I_SignUpIcon_Id" className="fas fa-user-plus"></i>
       </div>
       <div className="SignUp_Div_SignInIcon_CN">
         &nbsp;&nbsp;&nbsp;&nbsp;Sign In

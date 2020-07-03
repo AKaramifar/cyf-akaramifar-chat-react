@@ -10,16 +10,16 @@
   }
 }
 @keyframes SignIn_Keyframes_ErrorMessage {
-    0% {
-        color: #d35400;
-    }
-    50% {
-      color: #202020;
-    }
-    100% {
-        color: #d35400;
-    }
+  0% {
+    color: #d35400;
   }
+  50% {
+    color: #202020;
+  }
+  100% {
+    color: #d35400;
+  }
+}
 .SignIn_Div_SignIn_CN {
   width: 450px;
   padding-bottom: 12px;
@@ -30,16 +30,16 @@
   animation: FadeIn 200ms;
   background-color: #202020;
 }
-.SignIn_Div_SignInClose_CN{
+.SignIn_Div_SignInClose_CN {
   display: flex;
   justify-content: flex-end;
 }
-.SignIn_I_SignInCloseIcon_CN{
+.SignIn_I_SignInCloseIcon_CN {
   color: #00a693;
   padding: 10px;
   transition: 200ms;
 }
-.SignIn_I_SignInCloseIcon_CN:hover{
+.SignIn_I_SignInCloseIcon_CN:hover {
   color: #d35400;
   cursor: pointer;
 }
@@ -105,9 +105,9 @@
   color: #181818;
   background-color: #00a693;
   font-weight: bolder;
-  cursor: pointer;  
+  cursor: pointer;
 }
-.SignIn_I_SignInIcon_CN{
+.SignIn_I_SignInIcon_CN {
   font-size: 14px;
 }
 .SignIn_Div_ErrorMessage_CN {
@@ -144,7 +144,7 @@
   color: whitesmoke;
   cursor: pointer;
 }
-.SignIn_Span_SignUpTooltip_CN{
+.SignIn_Span_SignUpTooltip_CN {
   display: none;
   position: absolute;
   padding: 5px 8px;
@@ -156,11 +156,11 @@
   font-size: 12px;
   background-color: #202020;
 }
-.SignIn_I_SignUpIcon_CN:hover > .SignIn_Span_SignUpTooltip_CN{
+.SignIn_I_SignUpIcon_CN:hover > .SignIn_Span_SignUpTooltip_CN {
   display: block;
   animation: FadeIn 500ms;
 }
-.SignIn_I_LockIcon_CN{
+.SignIn_I_LockIcon_CN {
   color: #00a693;
   background-color: #151515;
   border-radius: 50px;
@@ -168,7 +168,7 @@
   padding: 10px;
   margin-left: 2.5px;
 }
-.SignIn_I_UserIcon_CN{
+.SignIn_I_UserIcon_CN {
   color: #00a693;
   background-color: #151515;
   border-radius: 50px;
