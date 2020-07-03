@@ -6,131 +6,128 @@ const SignIn = ({
   signIn_Func_Parm,
   setUserState_Func_Parm,
 }) => {
-  const showPassword = (e) => {
-    if (e.target.className === "I_Eye_Style far fa-eye-slash") {
-      e.target.className = "I_Eye_Style far fa-eye";
-      document.getElementById("Input_PasswordSignIn_JSX").type = "password";
+  const showPassword_Func = (e) => {
+    if (e.target.className === "SignIn_I_Eye_CN far fa-eye-slash") {
+      e.target.className = "SignIn_I_Eye_CN far fa-eye";
+      document.getElementById("SignIn_Input_Password_Id").type = "password";
     } else {
-      e.target.className = "I_Eye_Style far fa-eye-slash";
-      document.getElementById("Input_PasswordSignIn_JSX").type = "text";
+      e.target.className = "SignIn_I_Eye_CN far fa-eye-slash";
+      document.getElementById("SignIn_Input_Password_Id").type = "text";
     }
   };
-  const formValidation = () => {
-    let userName = document.getElementById("Input_UserNameSignIn_JSX");
-    let password = document.getElementById("Input_PasswordSignIn_JSX");
-    let userNameDiv = document.getElementById("Div_UserNameSignIn_JSX");
-    let passwordDiv = document.getElementById("Div_PasswordSignIn_JSX");
-    let showErrorDiv = document.getElementById("Div_SignInErrorMessage_JSX");
-    let showError = document.getElementById("P_SignInError_JSX");
-    let userTitle = document.getElementById("P_User_JSX");
-    let I_SignUp = document.getElementById("I_SignUp_JSX");
-    if ((userName.value === "") & (password.value === "")) {
-      userNameDiv.style.animation = "error infinite 2s";
-      passwordDiv.style.animation = "error infinite 2s";
-      I_SignUp.className = "fas fa-sign-in-alt";
-      showErrorDiv.style.display = "none";
-    } else if (userName.value === "") {
-      userNameDiv.style.animation = "error infinite 2s";
-      I_SignUp.className = "fas fa-sign-in-alt";
-      showErrorDiv.style.display = "none";
-    } else if (password.value === "") {
-      passwordDiv.style.animation = "error infinite 2s";
-      I_SignUp.className = "fas fa-sign-in-alt";
-      showErrorDiv.style.display = "none";
-    } else {
-      I_SignUp.className = "I_SignIn_Style fa fa-cog fa-spin fa-3x fa-fw";
+  const formValidation_Func = () => {
+    let userName_Input = document.getElementById("SignIn_Input_UserName_Id");
+    let password_Input = document.getElementById("SignIn_Input_Password_Id");
+    let userName_Div = document.getElementById("SignIn_Div_UserName_Id");
+    let password_Div = document.getElementById("SignIn_Div_Password_Id");
+    let showError_Div = document.getElementById("SignIn_Div_ErrorMessage_Id");
+    let showError_P = document.getElementById("SignIn_P_Error_Id");
+    let userTitle_P = document.getElementById("Header_P_User_Id");
+    let signInIcon_I = document.getElementById("SignIn_I_SignInIcon_Id");
+    if (userName_Input.value === "") {
+      userName_Div.style.animation = "SignIn_Keyframes_Error infinite 2s";
+      signInIcon_I.className = "fas fa-sign-in-alt";
+      showError_Div.style.display = "none";
+    }
+    if (password_Input.value === "") {
+      password_Div.style.animation = "SignIn_Keyframes_Error infinite 2s";
+      signInIcon_I.className = "fas fa-sign-in-alt";
+      showError_Div.style.display = "none";
+    } 
+    if (userName_Input.value !== "" && password_Input.value !== "") {
+      signInIcon_I.className = "SignIn_I_SignInIcon_CN fa fa-cog fa-spin fa-3x fa-fw";
       fetch(
-        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${userName.value}&password=${password.value}`,
+        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${userName_Input.value}&password=${password_Input.value}`,
         { method: "POST" }
       )
         .then((Response) => Response.json())
         .then((data) => {
-          showError.textContent = data;
-          showErrorDiv.style.display = "block";
-          if (data === "Success") {
+          showError_P.textContent = data;
+          showError_Div.style.display = "block";
+          if (data === "Success") {            
+            userTitle_P.textContent = userName_Input.value;
             setUserState_Func_Parm(true);
-            userTitle.textContent = userName.value;
             signIn_Func_Parm(false);
           } else {
-            I_SignUp.className = "fas fa-sign-in-alt";
+            signInIcon_I.className = "fas fa-sign-in-alt";
           }
         })
         .catch((err) => console.log(err));
     }
   };
   return (
-    <div className="Div_SignIn_Style">
-      <div className="Div_SignInClose_Style">
+    <div className="SignIn_Div_SignIn_CN">
+      <div className="SignIn_Div_SignInClose_CN">
         <i
-          class="P_SignInClose_Style fas fa-times-circle"
+          className="SignIn_I_SignInClose_CN fas fa-times-circle"
           onClick={() => signIn_Func_Parm(false)}
         ></i>
       </div>
-      <div className="Div_SignInUserIcon_Style">
-        <i className="I_SignInUserIcon_Style fas fa-user-circle"></i>
+      <div className="SignIn_Div_SignInUserIcon_CN">
+        <i className="SignIn_I_SignInUserIcon_CN fas fa-user-circle"></i>
       </div>
-      <div id="Div_UserNameSignIn_JSX" className="Div_UserNameSignIn_Style">
-        <i className="I_Lock_Style fas fa-user-circle"></i>
+      <div id="SignIn_Div_UserName_Id" className="SignIn_Div_UserName_CN">
+        <i className="SignIn_I_User_CN fas fa-user-circle"></i>
         <input
-          id="Input_UserNameSignIn_JSX"
-          className="Input_UserNameSignIn_Style"
+          id="SignIn_Input_UserName_Id"
+          className="SignIn_Input_UserName_CN"
           spellCheck="false"
           autoComplete="off"
           placeholder="User Name . . ."
           type="text"
           onChange={() => {
-            let userNameDiv = document.getElementById("Div_UserNameSignIn_JSX");
-            let showErrorDiv = document.getElementById(
-              "Div_SignInErrorMessage_JSX"
+            let userName_Div = document.getElementById("SignIn_Div_UserName_Id");
+            let showError_Div = document.getElementById(
+              "SignIn_Div_ErrorMessage_Id"
             );
-            userNameDiv.style.animation = "";
-            showErrorDiv.style.display = "none";
+            userName_Div.style.animation = "";
+            showError_Div.style.display = "none";
           }}
         ></input>
       </div>
-      <div id="Div_PasswordSignIn_JSX" className="Div_PasswordSignIn_Style">
-        <i className="I_Lock_Style fas fa-lock"></i>
+      <div id="SignIn_Div_Password_Id" className="SignIn_Div_Password_CN">
+        <i className="SignIn_I_Lock_CN fas fa-lock"></i>
         <input
-          id="Input_PasswordSignIn_JSX"
+          id="SignIn_Input_Password_Id"
           placeholder="Password . . ."
           type="password"
-          className="Input_PasswordSignIn_Style"
+          className="SignIn_Input_Password_CN"
           onChange={() => {
-            let passwordDiv = document.getElementById("Div_PasswordSignIn_JSX");
-            let showErrorDiv = document.getElementById(
-              "Div_SignInErrorMessage_JSX"
+            let password_Div = document.getElementById("SignIn_Div_Password_Id");
+            let showError_Div = document.getElementById(
+              "SignIn_Div_ErrorMessage_Id"
             );
-            passwordDiv.style.animation = "";
-            showErrorDiv.style.display = "none";
+            password_Div.style.animation = "";
+            showError_Div.style.display = "none";
           }}
         ></input>
         <i
-          className="I_Eye_Style far fa-eye"
+          className="SignIn_I_Eye_CN far fa-eye"
           onClick={(e) => {
-            showPassword(e);
+            showPassword_Func(e);
           }}
         ></i>
       </div>
       <div
-        id="Div_SignInErrorMessage_JSX"
-        className="Div_SignInErrorMessage_Style"
+        id="SignIn_Div_ErrorMessage_Id"
+        className="SignIn_Div_ErrorMessage_CN"
       >
-        <p id="P_SignInError_JSX"></p>
+        <p id="SignIn_P_Error_Id"></p>
       </div>
-      <div className="Div_SignInButton_Style" onClick={() => formValidation()}>
+      <div className="SignIn_Div_SignInButton_CN" onClick={() => formValidation_Func()}>
         Sign In&nbsp;&nbsp;
-        <i id="I_SignUp_JSX" className="fas fa-sign-in-alt"></i>
+        <i id="SignIn_I_SignInIcon_Id" className="fas fa-sign-in-alt"></i>
       </div>
-      <div className="Div_SignUpIcon_Style">
+      <div className="SignIn_Div_SignUpIcon_CN">
         &nbsp;&nbsp;&nbsp;&nbsp;Create Account
         <i
-          className="P_SignUp_Style fas fa-user-plus"
+          className="SignIn_I_SignUpIcon_CN fas fa-user-plus"
           onClick={() => {
             signUp_Func_Parm(true);
             signIn_Func_Parm(false);
           }}
         >
-          <span className="Span_SignUpTooltip_Style">Sign Up</span>
+          <span className="SignIn_Span_SignUpTooltip_CN">Sign Up</span>
         </i>
       </div>
     </div>

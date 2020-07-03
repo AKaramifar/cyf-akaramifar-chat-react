@@ -1,4 +1,4 @@
-@keyframes error {
+@keyframes SignIn_Keyframes_Error {
   0% {
     box-shadow: 0px 0px 0px 1px #ee5a24;
   }
@@ -9,7 +9,7 @@
     box-shadow: 0px 0px 0px 1px #ee5a24;
   }
 }
-@keyframes errorMessage {
+@keyframes SignIn_Keyframes_ErrorMessage {
     0% {
         color: #d35400;
     }
@@ -20,7 +20,7 @@
         color: #d35400;
     }
   }
-.Div_SignIn_Style {
+.SignIn_Div_SignIn_CN {
   width: 450px;
   padding-bottom: 12px;
   margin: 30px auto;
@@ -30,32 +30,32 @@
   animation: FadeIn 200ms;
   background-color: #202020;
 }
-.Div_SignInClose_Style{
+.SignIn_Div_SignInClose_CN{
   display: flex;
   justify-content: flex-end;
 }
-.P_SignInClose_Style{
+.SignIn_I_SignInClose_CN{
   color: #00a693;
   padding: 10px;
   transition: 200ms;
 }
-.P_SignInClose_Style:hover{
+.SignIn_I_SignInClose_CN:hover{
   color: #d35400;
   cursor: pointer;
 }
-.Div_SignInUserIcon_Style {
+.SignIn_Div_SignInUserIcon_CN {
   display: flex;
   justify-content: center;
 }
-.I_SignInUserIcon_Style {
+.SignIn_I_SignInUserIcon_CN {
   height: 100px;
   padding-top: 40px;
   font-size: 100px;
   color: #00a693;
 }
-.Div_UserNameSignIn_Style,
-.Div_PasswordSignIn_Style,
-.Div_SignInButton_Style {
+.SignIn_Div_UserName_CN,
+.SignIn_Div_Password_CN,
+.SignIn_Div_SignInButton_CN {
   width: 70%;
   height: 40px;
   margin: 40px 15% 10px 15%;
@@ -64,11 +64,11 @@
   display: flex;
   align-items: center;
 }
-.Div_PasswordSignIn_Style {
+.SignIn_Div_Password_CN {
   margin: 10px 15%;
 }
-.Input_UserNameSignIn_Style,
-.Input_PasswordSignIn_Style {
+.SignIn_Input_UserName_CN,
+.SignIn_Input_Password_CN {
   width: 75%;
   height: 35px;
   border: none;
@@ -80,16 +80,16 @@
   outline: none;
   letter-spacing: 1px;
 }
-.I_Eye_Style {
+.SignIn_I_Eye_CN {
   margin-left: 5px;
   color: #00a693;
   transition: 200ms;
 }
-.I_Eye_Style:hover {
+.SignIn_I_Eye_CN:hover {
   color: whitesmoke;
   cursor: pointer;
 }
-.Div_SignInButton_Style {
+.SignIn_Div_SignInButton_CN {
   width: 40%;
   margin: 20px 30% 0px 30%;
   font-family: "Scada", sans-serif;
@@ -101,16 +101,16 @@
   letter-spacing: 1px;
   transition: 200ms;
 }
-.Div_SignInButton_Style:hover {
+.SignIn_Div_SignInButton_CN:hover {
   color: #181818;
   background-color: #00a693;
   font-weight: bolder;
   cursor: pointer;  
 }
-.I_SignIn_Style{
+.SignIn_I_SignIn_CN{
   font-size: 14px;
 }
-.Div_SignInErrorMessage_Style {
+.SignIn_Div_ErrorMessage_CN {
   width: 80%;
   height: 10px;
   margin: 10px 10% 0px 10%;
@@ -120,7 +120,7 @@
   display: none;
   animation: errorMessage infinite 2s;
 }
-.Div_SignUpIcon_Style {
+.SignIn_Div_SignUpIcon_CN {
   color: #777777;
   font-family: "Scada", sans-serif;
   font-size: small;
@@ -131,6 +131,41 @@
   align-items: center;
   justify-content: center;
 }
-.Div_SignUpIcon_Style i {
+.SignIn_Div_SignUpIcon_CN i {
   font-size: 12px;
+}
+.SignIn_I_SignUpIcon_CN {
+  color: #00a693;
+  padding: 10px;
+  font-size: 14px;
+  transition: 200ms;
+}
+.SignIn_I_SignUpIcon_CN:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+.SignIn_Span_SignUpTooltip_CN{
+  display: none;
+  position: absolute;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin-top: 31px;
+  margin-left: -20px;
+  color: #00a693;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #202020;
+}
+.SignIn_I_SignUpIcon_CN:hover > .SignIn_Span_SignUpTooltip_CN{
+  display: block;
+  animation: FadeIn 500ms;
+}
+.SignIn_I_User_CN,
+.SignIn_I_Lock_CN{
+  color: #00a693;
+  background-color: #151515;
+  border-radius: 50px;
+  font-size: 19px;
+  padding: 10px;
+  margin-left: 2.5px;
 }

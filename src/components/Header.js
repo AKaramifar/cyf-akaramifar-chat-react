@@ -3,42 +3,42 @@ import "./Header.css";
 
 const Header = ({ signUp_Func_Parm, signIn_Func_Parm, userState_Parm }) => {
   return (
-    <div className="Div_Header_Style">
-      <div className="Div_Logo_Style">
-        <i className="I_Logo_Style far fa-comments"></i>
-        <p className="P_Title_Style">CYF - Web Chat Messanger</p>
+    <div className="Header_Div_Header_CN">
+      <div className="Header_Div_Logo_CN">
+        <i className="Header_I_Logo_CN far fa-comments"></i>
+        <p className="Header_P_Title_CN">CYF - Web Chat Messanger</p>
       </div>
-      <div className="Div_Start_Style">
-        <div id="Div_Start_Main_JSX" className={userState_Parm ? "Div_Start_Main_Style Div_Start_Main_LogedIn_Style" : "Div_Start_Main_Style"}>
-          <i className="I_User_Style fas fa-user-circle"></i>
-          <p id="P_User_JSX" className="P_User_Style">
+      <div className="Header_Div_Start_CN">
+        <div id="Header_Div_Start_Main_Id" className={userState_Parm ? "Header_Div_Start_Main_CN Header_Div_Start_Main_LogedIn_CN" : "Header_Div_Start_Main_CN"}>
+          <i className="Header_I_User_CN fas fa-user-circle"></i>
+          <p id="Header_P_User_Id" className="Header_P_User_CN">
             Sign in / Create your Account
           </p>
           {userState_Parm ? null : (
             <i
-              className="P_SignIn_Style fas fa-sign-in-alt"
+              className="Header_P_SignIn_CN fas fa-sign-in-alt"
               onClick={() => signIn_Func_Parm(true)}
             >
-              <span className="Span_SignInTooltip_Style">Log In</span>
+              <span className="Header_Span_SignInTooltip_CN">Sign In</span>
             </i>
           )}
           {userState_Parm ? (
             <i
-              className="P_SignOut_Style fas fa-sign-out-alt"              
+              className="Header_P_SignOut_CN fas fa-sign-out-alt"              
             >
-              <span className="Span_SignOutTooltip_Style">Log Out</span>
+              <span className="Header_Span_SignOutTooltip_CN">Sign Out</span>
             </i>
           ) : null}
           {userState_Parm ? null : (
-            <i className="P_SignUp_Style fas fa-user-plus" onClick={() => signUp_Func_Parm(true)}>
-              <span className="Span_SignUpTooltip_Style">Sign Up</span>
+            <i className="Header_P_SignUp_CN fas fa-user-plus" onClick={() => signUp_Func_Parm(true)}>
+              <span className="Header_Span_SignUpTooltip_CN">Sign Up</span>
             </i>
           )}
         </div>
       </div>
-      <div id="Div_Online_JSX" className={userState_Parm ? "Div_OnlineState_Style Div_Onlinetrue_Style" : "Div_OnlineState_Style"}>
+      <div id="Header_Div_Online_Id" className={userState_Parm ? "Header_Div_OnlineState_CN Header_Div_Onlinetrue_CN" : "Header_Div_OnlineState_CN"}>
         <i className="fas fa-globe-americas"></i>
-        <p className="P_Online_Style">&nbsp;Online</p>
+        <p className="Header_P_Online_CN">&nbsp;Online</p>
       </div>
     </div>
   );
