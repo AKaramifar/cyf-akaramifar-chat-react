@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import moment from "moment";
 import "./SignUp.css";
-// if (
-//   password_Input.value.length === reTypePassword_Input.value.length &&
-//   password_Input.value !== reTypePassword_Input.value &&
-//   password_Input.length > 0
-// ) {
-//   console.log("true");
-//   reTypePasswordDiv.style.animation = "error infinite 2s";
-//   passwordDiv.style.animation = "error infinite 2s";
-// }
+
 const SignUp = ({
   signUp_Func_Parm,
   signIn_Func_Parm,
@@ -129,6 +121,7 @@ const SignUp = ({
       "SignUp_Div_ErrorMessage_Id"
     );
     let signUpIcon_I = document.getElementById("SignUp_I_SignUpIcon_Id");
+    let userTitle_P = document.getElementById("Header_P_User_Id");
     if (userName_Input.value === "") {
       userName_Div.style.animation = "SignUp_Keyframes_Error infinite 2s";
     }
@@ -167,10 +160,10 @@ const SignUp = ({
         .then((Response) => Response.json())
         .then((data) => {
           if (data !== "Sorry, This Username already taken!!!") {
-            // userTitle_P.textContent = userName_Input.value;
-            // setUserState_Func_Parm(true);
+            userTitle_P.textContent = userName_Input.value;
+            setUserState_Func_Parm(true);
+            signUp_Func_Parm(false);
             signUpIcon_I.className = "fas fa-user-plus";
-            // console.log(data);
           } else {
             signUpIcon_I.className = "fas fa-user-plus";
             errorMessage_Div.style.display = "block";
@@ -308,8 +301,8 @@ const SignUp = ({
         <i
           className="SignUp_I_SignInIcon_CN fas fa-sign-in-alt"
           onClick={() => {
-            signUp_Func_Parm(true);
-            signIn_Func_Parm(false);
+            signUp_Func_Parm(false);
+            signIn_Func_Parm(true);
           }}
         >
           <span className="SignUp_Span_Tooltip_CN">Sign In</span>

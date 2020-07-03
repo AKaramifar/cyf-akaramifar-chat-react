@@ -19,7 +19,7 @@ function App() {
   }
   return (
     <div className="Div_App_style">
-      <Header signUp_Func_Parm={signUp_F} signIn_Func_Parm={signIn_F} userState_Parm={userState}/>
+      <Header signUp_Func_Parm={signUp_F} signIn_Func_Parm={signIn_F} userState_Parm={userState} setUserState_Func_Parm={setUserState_F}/>
       {signIn ? <SignIn signUp_Func_Parm={signUp_F} signIn_Func_Parm={signIn_F} setUserState_Func_Parm={setUserState_F}/> : null}
       {signUp ? <SignUp signUp_Func_Parm={signUp_F}  signIn_Func_Parm={signIn_F} setUserState_Func_Parm={setUserState_F}/> : null}
     </div>

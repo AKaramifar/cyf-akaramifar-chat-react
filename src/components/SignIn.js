@@ -37,7 +37,7 @@ const SignIn = ({
     if (userName_Input.value !== "" && password_Input.value !== "") {
       signInIcon_I.className = "SignIn_I_SignInIcon_CN fa fa-cog fa-spin fa-3x fa-fw";
       fetch(
-        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${userName_Input.value}&password=${password_Input.value}`,
+        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${escape(userName_Input.value)}&password=${escape(password_Input.value)}`,
         { method: "POST" }
       )
         .then((Response) => Response.json())
@@ -83,6 +83,7 @@ const SignIn = ({
             userName_Div.style.animation = "";
             showError_Div.style.display = "none";
           }}
+          value="Afshin"
         ></input>
       </div>
       <div id="SignIn_Div_Password_Id" className="SignIn_Div_Password_CN">
@@ -100,6 +101,7 @@ const SignIn = ({
             password_Div.style.animation = "";
             showError_Div.style.display = "none";
           }}
+          value="#Ak_20021989#"
         ></input>
         <i
           className="SignIn_I_EyeIcon_CN far fa-eye"

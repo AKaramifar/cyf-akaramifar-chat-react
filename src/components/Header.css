@@ -33,7 +33,7 @@
 }
 .Header_Div_Header_CN {
   height: 70px;
-  background-color: #000000;
+  background-color: #181818;
   display: flex;  
   animation: Header_Keyframes_Header infinite 2s;
 }
@@ -93,25 +93,25 @@
   margin-left: 10px;
   font-family: "Scada", sans-serif;
   font-size: 14px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
-.Header_P_SignIn_CN,
-.Header_P_SignOut_CN,
-.Header_P_SignUp_CN {
+.Header_I_SignIn_CN,
+.Header_I_SignOut_CN,
+.Header_I_SignUp_CN {
   color: #00a693;
   padding: 10px;
   font-size: 14px;
   transition: 200ms;
 }
-.Header_P_SignIn_CN:hover,
-.Header_P_SignOut_CN:hover,
-.Header_P_SignUp_CN:hover {
+.Header_I_SignIn_CN:hover,
+.Header_I_SignOut_CN:hover,
+.Header_I_SignUp_CN:hover {
   color: whitesmoke;
   cursor: pointer;
 }
-.Header_P_SignIn_CN:hover > .Header_Span_SignInTooltip_CN,
-.Header_P_SignOut_CN:hover > .Header_Span_SignOutTooltip_CN,
-.Header_P_SignUp_CN:hover > .Header_Span_SignUpTooltip_CN{
+.Header_I_SignIn_CN:hover > .Header_Span_SignInTooltip_CN,
+.Header_I_SignOut_CN:hover > .Header_Span_SignOutTooltip_CN,
+.Header_I_SignUp_CN:hover > .Header_Span_SignUpTooltip_CN{
     display: block;
     animation: FadeIn 500ms;
   }
@@ -145,5 +145,54 @@
 .Header_P_Online_CN{
   font-family: "Scada", sans-serif;
   font-size: 14px;
-  letter-spacing: 2px;  
+  letter-spacing: 1px;  
+}
+.Header_Div_SignOut_CN{
+  width: 30%;
+  position: absolute;
+  background-color: #202020;
+  margin: 100px 35%;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Scada", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #00a693;
+  /* border-top: 5px solid #00a693; */
+}
+.Header_Div_SignOutClose_CN{
+  display: flex;
+  justify-content: center;
+  color: #00a693;
+}
+.Header_P_SignOutTitle_CN{
+  letter-spacing: 1px;
+}
+.Header_Div_SignOutButtons_CN{
+  display: flex;
+  justify-content: center;
+}
+.Header_P_OkButtun_CN,
+.Header_P_CancelButtun_CN{
+  width: 50%;
+  padding: 15px 0px;
+  margin: 0px;
+  font-size: 15px;
+  background-color: #202020;
+  transition: 200ms;
+}
+.Header_P_OkButtun_CN{
+  border-right: 1px solid #131313;
+  border-top: 1px solid #131313;
+  border-bottom-left-radius: 5px;
+}
+.Header_P_CancelButtun_CN{
+  border-top: 1px solid #131313;
+  border-bottom-right-radius: 5px;
+}
+.Header_P_OkButtun_CN:hover,
+.Header_P_CancelButtun_CN:hover{
+  background-color: #00a693;
+  color: #202020;
+  cursor: pointer;
 }
