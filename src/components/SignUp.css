@@ -1,13 +1,13 @@
-.Div_SignUp_Style {
+.SignUp_Div_SignUp_CN {
   width: 450px;
-  padding-bottom: 25px;
+  padding-bottom: 12px;
   margin: 30px auto;
   border-radius: 5px;
   border-top: 5px solid #00a693;
   animation: FadeIn 200ms;
   background-color: #202020;
 }
-.I_Lock_Style {
+.SignUp_I_LockIcon_CN{
   color: #00a693;
   background-color: #151515;
   border-radius: 50px;
@@ -15,8 +15,8 @@
   padding: 10px;
   margin-left: 5px;
 }
-.Div_PasswordValidState_Style,
-.Div_ReTypePasswordValidState_Style {
+.SignUp_Div_PasswordValidState_CN,
+.SignUp_Div_ReTypePasswordValidState_CN {
   width: 60%;
   height: 3px;
   border-radius: 2px;
@@ -25,71 +25,59 @@
   display: flex;
   background-color: #333333;
 }
-.Div_PoorPassword_Style,
-.Div_MediumPassword_Style,
-.Div_StrongPassword_Style,
-.Div_ReTypePoorPassword_Style,
-.Div_ReTypeMediumPassword_Style,
-.Div_ReTypeStrongPassword_Style
+.SignUp_Div_PoorPassword_CN,
+.SignUp_Div_MediumPassword_CN,
+.SignUp_Div_StrongPassword_CN,
+.SignUp_Div_ReTypePoorPassword_CN,
+.SignUp_Div_ReTypeMediumPassword_CN,
+.SignUp_Div_ReTypeStrongPassword_CN
  {
   width: 33.333333%;
   animation: FadeIn 1s;
   height: 3px;
   z-index: 0;
 }
-.Div_PoorPassword_Style,
-.Div_ReTypePoorPassword_Style {
+.SignUp_Div_PoorPassword_CN,
+.SignUp_Div_ReTypePoorPassword_CN {
   background-color: #ff5722;
   display: none;
 }
-.Div_MediumPassword_Style,
-.Div_ReTypeMediumPassword_Style {
+.SignUp_Div_MediumPassword_CN,
+.SignUp_Div_ReTypeMediumPassword_CN {
   background-color: #ffc107;
   display: none;
 }
-.Div_StrongPassword_Style,
-.Div_ReTypeStrongPassword_Style {
+.SignUp_Div_StrongPassword_CN,
+.SignUp_Div_ReTypeStrongPassword_CN {
   background-color: #32ff7e;
   display: none;
 }
-
-
-.Div_SignUp_Style {
-  width: 450px;
-  padding-bottom: 12px;
-  margin: 30px auto;
-  border-radius: 5px;
-  border-top: 5px solid #00a693;
-  font-family: "Scada", sans-serif;
-  animation: FadeIn 200ms;
-  background-color: #202020;
-}
-.Div_SignUpClose_Style{
+.SignUp_Div_CloseButton_CN{
   display: flex;
   justify-content: flex-end;
 }
-.P_SignUpClose_Style{
+.SignUp_P_CloseButton_CN{
   color: #00a693;
   padding: 10px;
   transition: 200ms;
 }
-.P_SignUpClose_Style:hover{
+.SignUp_P_CloseButton_CN:hover{
   color: #d35400;
   cursor: pointer;
 }
-.Div_SignUpUserIcon_Style {
+.SignUp_Div_UserIcon_CN {
   display: flex;
   justify-content: center;
 }
-.I_SignUpUserIcon_Style {
+.SignUp_I_UserIcon_CN {
   height: 100px;
   padding-top: 40px;
   font-size: 100px;
   color: #00a693;
 }
-.Div_UserNameSignUp_Style,
-.Div_PasswordSignUp_Style,
-.Div_SignUpButton_Style {
+.SignUp_Div_UserName_CN,
+.SignUp_Div_Password_CN,
+.SignUp_Div_SignUpButton_CN {
   width: 70%;
   height: 40px;
   margin: 40px 15% 10px 15%;
@@ -98,11 +86,11 @@
   display: flex;
   align-items: center;
 }
-.Div_PasswordSignUp_Style {
+.SignUp_Div_Password_CN {
   margin: 10px 15%;
 }
-.Input_UserNameSignUp_Style,
-.Input_PasswordSignUp_Style {
+.SignUp_Input_UserName_CN,
+.SignUp_Input_Password_CN {
   width: 75%;
   height: 35px;
   border: none;
@@ -114,16 +102,24 @@
   outline: none;
   letter-spacing: 1px;
 }
-.I_Eye_Style {
+.SignUp_I_UserNameIcon_CN {
+  color: #00a693;
+  background-color: #151515;
+  border-radius: 50px;
+  font-size: 19px;
+  padding: 10px;
+  margin-left: 2.5px;
+}
+.SignUp_I_EyeIcon_CN {
   margin-left: 5px;
   color: #00a693;
   transition: 200ms;
 }
-.I_Eye_Style:hover {
+.SignUp_I_EyeIcon_CN:hover {
   color: whitesmoke;
   cursor: pointer;
 }
-.Div_SignUpButton_Style {
+.SignUp_Div_SignUpButton_CN {
   width: 40%;
   margin: 20px 30% 0px 30%;
   font-family: "Scada", sans-serif;
@@ -135,16 +131,23 @@
   letter-spacing: 1px;
   transition: 200ms;
 }
-.Div_SignUpButton_Style:hover {
+.SignUp_Div_SignUpButton_CN:hover {
   color: #181818;
   background-color: #00a693;
   font-weight: bolder;
   cursor: pointer;  
 }
-.I_SignUp_Style{
+.SignUp_I_SignInIcon_CN{
+  color: #00a693;
+  padding: 10px;
   font-size: 14px;
+  transition: 200ms;
 }
-.Div_SignUpErrorMessage_Style {
+.SignUp_I_SignInIcon_CN:hover {
+  color: whitesmoke;
+  cursor: pointer;
+}
+.SignUp_Div_ErrorMessage_CN {
   width: 80%;
   height: 10px;
   margin: 10px 10% 0px 10%;
@@ -154,7 +157,7 @@
   display: none;
   animation: errorMessage infinite 2s;
 }
-.Div_SignInIcon_Style {
+.SignUp_Div_SignInIcon_CN {
   color: #777777;
   font-family: "Scada", sans-serif;
   font-size: small;
@@ -165,6 +168,21 @@
   align-items: center;
   justify-content: center;
 }
-.Div_SignInIcon_Style i {
+.SignUp_Div_SignInIcon_CN i {
   font-size: 12px;
+}
+.SignUp_Span_Tooltip_CN{
+  display: none;
+  position: absolute;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin-top: 31px;
+  margin-left: -20px;
+  color: #00a693;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  background-color: #202020;
+}
+.SignUp_I_SignInIcon_CN:hover > .SignUp_Span_Tooltip_CN{
+  display: block;
 }

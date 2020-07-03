@@ -7,11 +7,11 @@ const SignIn = ({
   setUserState_Func_Parm,
 }) => {
   const showPassword_Func = (e) => {
-    if (e.target.className === "SignIn_I_Eye_CN far fa-eye-slash") {
-      e.target.className = "SignIn_I_Eye_CN far fa-eye";
+    if (e.target.className === "SignIn_I_EyeIcon_CN far fa-eye-slash") {
+      e.target.className = "SignIn_I_EyeIcon_CN far fa-eye";
       document.getElementById("SignIn_Input_Password_Id").type = "password";
     } else {
-      e.target.className = "SignIn_I_Eye_CN far fa-eye-slash";
+      e.target.className = "SignIn_I_EyeIcon_CN far fa-eye-slash";
       document.getElementById("SignIn_Input_Password_Id").type = "text";
     }
   };
@@ -59,15 +59,15 @@ const SignIn = ({
     <div className="SignIn_Div_SignIn_CN">
       <div className="SignIn_Div_SignInClose_CN">
         <i
-          className="SignIn_I_SignInClose_CN fas fa-times-circle"
+          className="SignIn_I_SignInCloseIcon_CN fas fa-times-circle"
           onClick={() => signIn_Func_Parm(false)}
         ></i>
       </div>
-      <div className="SignIn_Div_SignInUserIcon_CN">
+      <div className="SignIn_Div_SignInUser_CN">
         <i className="SignIn_I_SignInUserIcon_CN fas fa-user-circle"></i>
       </div>
       <div id="SignIn_Div_UserName_Id" className="SignIn_Div_UserName_CN">
-        <i className="SignIn_I_User_CN fas fa-user-circle"></i>
+        <i className="SignIn_I_UserNameIcon_CN fas fa-user-circle"></i>
         <input
           id="SignIn_Input_UserName_Id"
           className="SignIn_Input_UserName_CN"
@@ -86,7 +86,7 @@ const SignIn = ({
         ></input>
       </div>
       <div id="SignIn_Div_Password_Id" className="SignIn_Div_Password_CN">
-        <i className="SignIn_I_Lock_CN fas fa-lock"></i>
+        <i className="SignIn_I_LockIcon_CN fas fa-lock"></i>
         <input
           id="SignIn_Input_Password_Id"
           placeholder="Password . . ."
@@ -102,7 +102,7 @@ const SignIn = ({
           }}
         ></input>
         <i
-          className="SignIn_I_Eye_CN far fa-eye"
+          className="SignIn_I_EyeIcon_CN far fa-eye"
           onClick={(e) => {
             showPassword_Func(e);
           }}
@@ -118,7 +118,7 @@ const SignIn = ({
         Sign In&nbsp;&nbsp;
         <i id="SignIn_I_SignInIcon_Id" className="fas fa-sign-in-alt"></i>
       </div>
-      <div className="SignIn_Div_SignUpIcon_CN">
+      <div className="SignIn_Div_SignUp_CN">
         &nbsp;&nbsp;&nbsp;&nbsp;Create Account
         <i
           className="SignIn_I_SignUpIcon_CN fas fa-user-plus"
