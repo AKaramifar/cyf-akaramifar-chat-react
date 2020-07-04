@@ -229,6 +229,16 @@ const SignUp = ({
             showPassword_Func(e, "SignUp_Input_Password_Id");
           }}
         ></i>
+        <i class="SignUp_P_PasswordInfo_CN fas fa-info-circle"></i>
+        <div className="SignUp_Div_PasswordInfo_CN">
+          <ul>
+            <li>Min 8 Characters</li>
+            <li>Upper Case Characters ( A - Z )</li>
+            <li>Lower Case Characters ( z - z )</li>
+            <li>Numbers ( 0 - 9 )</li>
+            <li>Special  Characters ( e.g., !@#$% )</li>
+          </ul>
+        </div>
       </div>
       <div className="SignUp_Div_PasswordValidState_CN">
         <div

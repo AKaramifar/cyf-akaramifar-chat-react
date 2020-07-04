@@ -1,0 +1,9 @@
+.MyPannel_Div_MyPannel_CN{
+    width: 25%;
+    height: calc(100vh - 125px);
+    margin-right: 25px;
+    margin-left: auto;
+    background-color: #202020;
+    border-radius: 20px;
+    animation: FadeIn 1s;
+}

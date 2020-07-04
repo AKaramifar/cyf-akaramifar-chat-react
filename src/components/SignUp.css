@@ -23,7 +23,8 @@
 .SignUp_Div_SignUp_CN {
   width: 450px;
   padding-bottom: 12px;
-  margin: 30px auto;
+  margin: 30px calc(50% - 225px);
+  position: absolute;
   border-radius: 5px;
   animation: FadeIn 200ms;
   background-color: #202020;
@@ -219,4 +220,31 @@
 }
 .SignUp_I_SignInIcon_CN:hover > .SignUp_Span_Tooltip_CN{
   display: block;
+}
+.SignUp_P_PasswordInfo_CN{
+  position: absolute;
+  margin-left: 320px;
+  color: #9b9b9b;
+  font-size: larger;
+  transition: 200ms;
+  padding: 5px;
+}
+.SignUp_P_PasswordInfo_CN:hover{
+  color: #00a693;  
+}
+.SignUp_P_PasswordInfo_CN:hover ~ .SignUp_Div_PasswordInfo_CN{
+  display: block;
+}
+.SignUp_Div_PasswordInfo_CN{
+  width: 240px;
+  color: #9b9b9b;
+  background-color: #202020;
+  position: absolute;
+  border-radius: 5px;
+  margin-left: 385px;
+  padding-right: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  display: none;
+  animation: FadeIn 1s;
 }

@@ -1,0 +1,8 @@
+.AllUsers_Div_AllUsers_CN{
+    width: 25%;
+    margin-left: 25px;
+    height: calc(100vh - 125px);
+    background-color: #202020;
+    border-radius: 20px;
+    animation: FadeIn 1s;
+}

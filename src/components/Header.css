@@ -33,7 +33,7 @@
 }
 .Header_Div_Header_CN {
   height: 70px;
-  background-color: #181818;
+  background-color: #202020;
   display: flex;  
   animation: Header_Keyframes_Header infinite 2s;
 }
@@ -127,11 +127,11 @@
     font-size: 12px;
     background-color: #202020;
 }
-.Header_P_SignOut_CN{
+.Header_I_SignOut_CN{
   margin-left: 30px;
 }
 .Header_Div_OnlineState_CN{
-  width: 20%;
+  width: 15%;
   justify-content: center;
   align-items: center;
   color: #00a693;
@@ -151,14 +151,14 @@
   width: 30%;
   position: absolute;
   background-color: #202020;
-  margin: 100px 35%;
+  margin: 150px 35%;
   border-radius: 5px;
   text-align: center;
-  font-family: "Scada", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   color: #00a693;
-  /* border-top: 5px solid #00a693; */
+  border: 1px solid #294257;
 }
 .Header_Div_SignOutClose_CN{
   display: flex;
@@ -177,7 +177,7 @@
   width: 50%;
   padding: 15px 0px;
   margin: 0px;
-  font-size: 15px;
+  font-size: 14px;
   background-color: #202020;
   transition: 200ms;
 }
