@@ -1,7 +1,14 @@
 import React, { useState } from "react";
+import moment from "moment";
 import "./Header.css";
 
-const Header = ({ signUp_Func_Parm, signIn_Func_Parm, userState_Parm, setUserState_Func_Parm }) => {
+const Header = ({
+  userInfo_Parm,
+  signUp_Func_Parm,
+  signIn_Func_Parm,
+  userState_Parm,
+  setUserState_Func_Parm,
+}) => {
   const [signOut, setSignOut] = useState(false);
   return (
     <div className="Header_Div_Header_CN">
@@ -77,6 +84,19 @@ const Header = ({ signUp_Func_Parm, signIn_Func_Parm, userState_Parm, setUserSta
             <p
               className="Header_P_OkButtun_CN"
               onClick={() => {
+                fetch(
+                  `https://cyf-akaramifar-chat-node.glitch.me/signout?userid=${escape(
+                    userInfo_Parm.userId
+                  )}&username=${escape(userInfo_Parm.userName)}&userpassword=${escape(
+                    userInfo_Parm.userPassword
+                  )}&usersecuritycode=${escape(userInfo_Parm.userSecurityCode)}&lastonlinetime=${escape(moment().format("MMMM Do YYYY, h:mm:ss a").toString())}`,
+                  { method: "POST" }
+                )
+                  .then((Response) => Response.json())
+                  .then((data) => {
+                    console.log(data);
+                  })
+                  .catch((err) => console.log(err));
                 let userTitle_P = document.getElementById("Header_P_User_Id");
                 userTitle_P.textContent = "Sign in / Create your Account";
                 setUserState_Func_Parm(false);

@@ -1,10 +1,12 @@
 import React from "react";
+import moment from "moment";
 import "./SignIn.css";
 
 const SignIn = ({
   signUp_Func_Parm,
   signIn_Func_Parm,
   setUserState_Func_Parm,
+  setUserInfo_Func_Parm
 }) => {
   const showPassword_Func = (e) => {
     if (e.target.className === "SignIn_I_EyeIcon_CN far fa-eye-slash") {
@@ -33,18 +35,19 @@ const SignIn = ({
       password_Div.style.animation = "SignIn_Keyframes_Error infinite 2s";
       signInIcon_I.className = "fas fa-sign-in-alt";
       showError_Div.style.display = "none";
-    } 
+    }
     if (userName_Input.value !== "" && password_Input.value !== "") {
       signInIcon_I.className = "SignIn_I_SignInIcon_CN fa fa-cog fa-spin fa-3x fa-fw";
       fetch(
-        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${escape(userName_Input.value)}&password=${escape(password_Input.value)}`,
+        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${escape(userName_Input.value)}&password=${escape(password_Input.value)}&lastonlinetime=${escape(moment().format("MMMM Do YYYY, h:mm:ss a").toString())}`,
         { method: "POST" }
       )
         .then((Response) => Response.json())
         .then((data) => {
           showError_P.textContent = data;
           showError_Div.style.display = "block";
-          if (data === "Success") {            
+          if (data.status === "Success") {
+            setUserInfo_Func_Parm(data.userId, data.userName, data.userPassword, data.userSecurityCode);
             userTitle_P.textContent = userName_Input.value;
             setUserState_Func_Parm(true);
             signIn_Func_Parm(false);

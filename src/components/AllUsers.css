@@ -1,8 +1,81 @@
-.AllUsers_Div_AllUsers_CN{
-    width: 25%;
-    margin-left: 25px;
-    height: calc(100vh - 125px);
-    background-color: #202020;
-    border-radius: 20px;
-    animation: FadeIn 1s;
+.AllUsers_Div_AllUsers_CN {
+  width: 22%;
+  margin-left: 25px;
+  height: calc(100vh - 125px);
+  border-radius: 20px;
+  animation: FadeIn 1s;
+}
+.AllUsers_Div_SearchUser_CN {
+  background-color: #202020;
+  border-radius: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.AllUsers_I_SearchIcon_CN {
+  color: #00a693;
+  font-size: 18px;
+  padding: 5px;
+}
+.AllUsers_Input_SearchUser_CN {
+  color: whitesmoke;
+  font-family: "Scada", sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  height: 35px;
+  border: none;
+  outline: none;
+  background-color: #202020;
+  width: 80%;
+}
+.Alluser_Div_SearchResult_CN {
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  background-color: #202020;
+  height: calc(100% - 70px);
+  border-radius: 25px;
+}
+.AllUsers_Div_User_CN{
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  border-radius: 50px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  transition: 200ms;
+}
+.AllUsers_Div_User_CN:hover{
+  background-color: #252525;
+  cursor: pointer;
+}
+.AllUsers_I_UserIcon_CN{
+  color: #646464;
+  border-radius: 50px;
+  font-size: 50px;
+  padding: 10px;
+  margin-left: 2.5px;
+}
+.AllUsers_I_OnlineUserIcon_CN{
+  color: #00a693;
+  border-radius: 50px;
+  font-size: 50px;
+  padding: 10px;
+  margin-left: 2.5px;
+}
+.AllUsers_P_UserName_CN{
+  margin: 0px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  color: whitesmoke;
+  font-family: "Scada", sans-serif;
+  font-size: 14px;
+}
+.AllUsers_P_LastOnlineTime_CN{
+  margin: 0px;
+  margin-left: 10px;
+  font-family: "Scada", sans-serif;
+  font-size: 12px;
+  color: rgb(173, 173, 173);
 }

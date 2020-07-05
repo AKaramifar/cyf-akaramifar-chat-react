@@ -6,6 +6,7 @@ const SignUp = ({
   signUp_Func_Parm,
   signIn_Func_Parm,
   setUserState_Func_Parm,
+  setUserInfo_Func_Parm
 }) => {
   const [passwordValid, setPasswordValid] = useState(false);
   const [reTypePasswordValid, setReTypePasswordValid] = useState(false);
@@ -159,7 +160,8 @@ const SignUp = ({
       })
         .then((Response) => Response.json())
         .then((data) => {
-          if (data !== "Sorry, This Username already taken!!!") {
+          if (data.status === "Success") {
+            setUserInfo_Func_Parm(data.userId, data.userName, data.userPassword, data.userSecurityCode);
             userTitle_P.textContent = userName_Input.value;
             setUserState_Func_Parm(true);
             signUp_Func_Parm(false);
@@ -229,7 +231,7 @@ const SignUp = ({
             showPassword_Func(e, "SignUp_Input_Password_Id");
           }}
         ></i>
-        <i class="SignUp_P_PasswordInfo_CN fas fa-info-circle"></i>
+        <i className="SignUp_P_PasswordInfo_CN fas fa-info-circle"></i>
         <div className="SignUp_Div_PasswordInfo_CN">
           <ul>
             <li>Min 8 Characters</li>
