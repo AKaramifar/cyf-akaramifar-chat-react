@@ -33,7 +33,7 @@
 }
 .Header_Div_Header_CN {
   height: 70px;
-  background-color: #202020;
+  background-color: #282828;
   display: flex;  
   animation: Header_Keyframes_Header infinite 2s;
 }
