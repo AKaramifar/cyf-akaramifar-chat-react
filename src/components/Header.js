@@ -8,6 +8,7 @@ const Header = ({
   signIn_Func_Parm,
   userState_Parm,
   setUserState_Func_Parm,
+  setCurrentUserToChat_Func_Parm
 }) => {
   const [signOut, setSignOut] = useState(false);
   return (
@@ -99,6 +100,7 @@ const Header = ({
                   .catch((err) => console.log(err));
                 let userTitle_P = document.getElementById("Header_P_User_Id");
                 userTitle_P.textContent = "Sign in / Create your Account";
+                setCurrentUserToChat_Func_Parm(null)
                 setUserState_Func_Parm(false);
                 setSignOut(false);
               }}
