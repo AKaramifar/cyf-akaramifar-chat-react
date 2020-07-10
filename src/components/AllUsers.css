@@ -3,7 +3,7 @@
   margin-left: 25px;
   height: calc(100vh - 125px);
   border-radius: 20px;
-  animation: FadeIn 1s;
+  animation: FadeIn 500ms;
 }
 .AllUsers_Div_SearchUser_CN {
   background-color: #282828;
@@ -32,9 +32,8 @@
 .Alluser_Div_SearchResult_CN {
   width: 100%;
   margin-top: 10px;
-  padding-top: 10px;
   background-color: #282828;
-  height: calc(100% - 70px);
+  height: calc(100% - 60px);
   overflow: overlay;
   overflow: none;
   border-radius: 25px;
