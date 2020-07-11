@@ -16,7 +16,6 @@
   border-bottom: 1px solid #777777;
 }
 .ChatPlace_Div_MessagesBox_CN{
-  /* background-color: khaki; */
   overflow: scroll;
   width: 90%;
   height: calc(100% - 175px);
@@ -42,6 +41,9 @@
   border: none;
   outline: none;  
   width: 85%;
+}
+.ChatPlace_Div_CurrentUserToChatDetile_CN{
+
 }
 .ChatPlace_I_SendIcon_CN{
   padding: 15px 16px 15px 14px;
@@ -69,6 +71,9 @@
   padding: 10px;
   margin-left: 2.5px;
 }
+.ChatPlace_P_UserName_CN{
+  padding-top: 4px;
+}
 .ChatPlace_P_UserName_CN,
 .ChatPlace_P_LastOnlineTime_CN{
   margin: 0px;
@@ -78,31 +83,67 @@
   font-family: "Scada", sans-serif;
   font-size: 15px;
 }
-.ChatPlace_Div_Message_CN{
-  width: fit-content;
+.ChatPlace_P_LastOnlineTime_CN{
+  font-size: 12px;
+}
+.ChatPlace_Div_MessageReceiver_CN{
+  width: 100%;
   padding-right: 20px;
-  /* background-color: lightcoral; */
   display: flex;
-  /* align-items: center; */
   margin-top: 5px;
 }
-.ChatPlace_Div_MessagePart_CN{
+.ChatPlace_Div_MessageReceiverPart_CN{
   background-color: #404040;
-  border-radius: 20px;
+  border-radius: 5px 20px;
   color: whitesmoke;
   font-family: "Scada", sans-serif;
   min-width: 200px;
-  margin-top: 8px;
+  margin-top: 10px;
   padding: 5px 25px 5px 15px;
   
 }
-.ChatPlace_P_Message_CN{
+.ChatPlace_P_MessageReceiver_CN{
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 15px;
 }
-.ChatPlace_P_MessageTime_CN{
-  font-size: 10px;
+.ChatPlace_P_MessageTimeReceiver_CN{
+  font-size: 12px;
+  text-align: right;
+}
+
+
+.ChatPlace_Div_MessageSender_CN{
+  width: 100%;
+  padding-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+.ChatPlace_Div_MessageSenderPart_CN{
+  background-color: #00a693;
+  border-radius: 20px 5px;
+  color: whitesmoke;
+  font-family: "Scada", sans-serif;
+  min-width: 200px;
+  max-width: 70%;
+  margin-top: 10px;
+  padding: 5px 25px 5px 15px;
+  transition: 200ms;
+}
+.ChatPlace_Div_MessageSenderPart_CN:hover{
+  background-color: #05c5af;
+  cursor: pointer;
+}
+.ChatPlace_P_MessageSender_CN{
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+.ChatPlace_P_MessageTimeSender_CN{
+  font-size: 12px;
   text-align: right;
 }

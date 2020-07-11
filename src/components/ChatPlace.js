@@ -21,7 +21,7 @@ class ChatPlace extends Component {
       .then((Response) => Response.json())
       .then((data) => {
         this.props.setMessages_Func_Parm(data);
-        setTimeout(() => this.getMessages_Func(), 5000);
+        setTimeout(() => this.getMessages_Func(), 2000);
       })
       .catch((err) => console.log(err));
   };
@@ -49,6 +49,7 @@ class ChatPlace extends Component {
         }),
       });
     }
+    document.getElementById("ChatPlace_Input_Message_CN").value = "";
   };
   render() {
     return (
@@ -61,21 +62,38 @@ class ChatPlace extends Component {
                 : "ChatPlace_I_UserIcon_CN fas fa-user-circle"
             }
           ></i>
-          <p className="ChatPlace_P_UserName_CN">
-            {this.props.currentUserToChat_Parm.userName},
-          </p>
-          <p className="ChatPlace_P_LastOnlineTime_CN">
-            Last Seen: {this.props.currentUserToChat_Parm.lastOnlineTime},
-            {this.props.currentUserToChat_Parm.online === "true"
-              ? " Online"
-              : " Offline"}
-          </p>
+          <div className="ChatPlace_Div_CurrentUserToChatDetile_CN">
+            <p className="ChatPlace_P_UserName_CN">
+              {this.props.currentUserToChat_Parm.userName}
+            </p>
+            <p className="ChatPlace_P_LastOnlineTime_CN">
+              Last Seen: {this.props.currentUserToChat_Parm.lastOnlineTime}
+            </p>
+          </div>
         </div>
-        <div className="ChatPlace_Div_MessagesBox_CN">
+        <div
+          id="ChatPlace_Div_MessagesBox_Id"
+          className="ChatPlace_Div_MessagesBox_CN"
+        >
           {this.props.messages_Parm !== null
             ? this.props.messages_Parm.map((message, index) => {
-                return (
-                  <div className="ChatPlace_Div_Message_CN" key={index}>
+                return message.senderUserId ===
+                  this.props.userInfo_Parm.userId ? (
+                  <div className="ChatPlace_Div_MessageSender_CN" key={index}>
+                    <div className="ChatPlace_Div_MessageSenderPart_CN">
+                      <p className="ChatPlace_P_MessageSender_CN">
+                        {message.message}
+                      </p>
+                      <p className="ChatPlace_P_MessageTimeSender_CN">
+                        {message.messageTime}
+                      </p>
+                    </div>
+                    <div>
+                      <i className="ChatPlace_I_OnlineUserIcon_CN fas fa-user-circle"></i>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="ChatPlace_Div_MessageReceiver_CN" key={index}>
                     <div>
                       <i
                         className={
@@ -83,11 +101,15 @@ class ChatPlace extends Component {
                             ? "ChatPlace_I_OnlineUserIcon_CN fas fa-user-circle"
                             : "ChatPlace_I_UserIcon_CN fas fa-user-circle"
                         }
-                      ></i>                      
+                      ></i>
                     </div>
-                    <div className="ChatPlace_Div_MessagePart_CN">
-                      <p className="ChatPlace_P_Message_CN">{message.message}</p>
-                      <p className="ChatPlace_P_MessageTime_CN">{message.messageTime}</p>
+                    <div className="ChatPlace_Div_MessageReceiverPart_CN">
+                      <p className="ChatPlace_P_MessageReceiver_CN">
+                        {message.message}
+                      </p>
+                      <p className="ChatPlace_P_MessageTimeReceiver_CN">
+                        {message.messageTime}
+                      </p>
                     </div>
                   </div>
                 );
