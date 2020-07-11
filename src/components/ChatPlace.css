@@ -17,6 +17,7 @@
 }
 .ChatPlace_Div_MessagesBox_CN{
   /* background-color: khaki; */
+  overflow: scroll;
   width: 90%;
   height: calc(100% - 175px);
   margin: 0px 5% 5px 5%;
@@ -76,4 +77,32 @@
   color: whitesmoke;
   font-family: "Scada", sans-serif;
   font-size: 15px;
+}
+.ChatPlace_Div_Message_CN{
+  width: fit-content;
+  padding-right: 20px;
+  /* background-color: lightcoral; */
+  display: flex;
+  /* align-items: center; */
+  margin-top: 5px;
+}
+.ChatPlace_Div_MessagePart_CN{
+  background-color: #404040;
+  border-radius: 20px;
+  color: whitesmoke;
+  font-family: "Scada", sans-serif;
+  min-width: 200px;
+  margin-top: 8px;
+  padding: 5px 25px 5px 15px;
+  
+}
+.ChatPlace_P_Message_CN{
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.ChatPlace_P_MessageTime_CN{
+  font-size: 10px;
+  text-align: right;
 }

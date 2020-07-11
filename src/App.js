@@ -15,7 +15,7 @@ function App() {
   const [requestAllUsers, setRequestAllUsers] = useState("");
   const [users, setUsers] = useState([]);
   const [currentUserToChat, setCurrentUserToChat] = useState(null);
-
+  const [messages, setMessages] = useState(null)
 
   useEffect(() => {
     if (requestAllUsers !== "") {
@@ -27,9 +27,12 @@ function App() {
         .catch((err) => console.log(err));
     }
   }, [requestAllUsers]);
-  const setCurrentUserToChat_Func = (user) =>{
-    setCurrentUserToChat(user)
+  const setMessages_Func = (messages) =>{
+    setMessages(messages);
   }
+  const setCurrentUserToChat_Func = (user) => {
+    setCurrentUserToChat(user);
+  };
   const signIn_Func = (state) => {
     setSignIn(state);
   };
@@ -82,12 +85,26 @@ function App() {
           signUp_Func_Parm={signUp_Func}
           signIn_Func_Parm={signIn_Func}
           setUserState_Func_Parm={setUserState_Func}
-          setUserInfo_Func_Parm={setUserInfo_Func}          
+          setUserInfo_Func_Parm={setUserInfo_Func}
         />
       ) : null}
       <div className="App_Div_MainBody_CN">
-        {userState ? <AllUsers setCurrentUserToChat_Func_Parm={setCurrentUserToChat_Func} users_Parm={users} userInfo_Parm={userInfo}/> : null}
-        {currentUserToChat ? <ChatPlace currentUserToChat_Parm={currentUserToChat} userInfo_Parm={userInfo}/> : null}
+        {userState ? (
+          <AllUsers
+            setCurrentUserToChat_Func_Parm={setCurrentUserToChat_Func}
+            users_Parm={users}
+            userInfo_Parm={userInfo}
+            setMessages_Func_Parm={setMessages_Func}
+          />
+        ) : null}
+        {currentUserToChat ? (
+          <ChatPlace
+            currentUserToChat_Parm={currentUserToChat}
+            userInfo_Parm={userInfo}
+            setMessages_Func_Parm={setMessages_Func}
+            messages_Parm={messages}
+          />
+        ) : null}
         {userState ? <MyPannel /> : null}
       </div>
     </div>

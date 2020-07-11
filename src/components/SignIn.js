@@ -6,7 +6,7 @@ const SignIn = ({
   signUp_Func_Parm,
   signIn_Func_Parm,
   setUserState_Func_Parm,
-  setUserInfo_Func_Parm
+  setUserInfo_Func_Parm,
 }) => {
   const showPassword_Func = (e) => {
     if (e.target.className === "SignIn_I_EyeIcon_CN far fa-eye-slash") {
@@ -37,17 +37,27 @@ const SignIn = ({
       showError_Div.style.display = "none";
     }
     if (userName_Input.value !== "" && password_Input.value !== "") {
-      signInIcon_I.className = "SignIn_I_SignInIcon_CN fa fa-cog fa-spin fa-3x fa-fw";
+      signInIcon_I.className =
+        "SignIn_I_SignInIcon_CN fa fa-cog fa-spin fa-3x fa-fw";
       fetch(
-        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${escape(userName_Input.value)}&password=${escape(password_Input.value)}&lastonlinetime=${escape(moment().format("MMMM Do YYYY, h:mm:ss a").toString())}`,
-        { method: "POST" }
+        `https://cyf-akaramifar-chat-node.glitch.me/signin?username=${escape(
+          userName_Input.value
+        )}&password=${escape(password_Input.value)}&lastonlinetime=${escape(
+          moment().format("MMMM Do YYYY, h:mm:ss a").toString()
+        )}`,
+        { method: "POST"}
       )
         .then((Response) => Response.json())
         .then((data) => {
           showError_P.textContent = data;
           showError_Div.style.display = "block";
           if (data.status === "Success") {
-            setUserInfo_Func_Parm(data.userId, data.userName, data.userPassword, data.userSecurityCode);
+            setUserInfo_Func_Parm(
+              data.userId,
+              data.userName,
+              data.userPassword,
+              data.userSecurityCode
+            );
             userTitle_P.textContent = userName_Input.value;
             setUserState_Func_Parm(true);
             signIn_Func_Parm(false);
@@ -79,14 +89,16 @@ const SignIn = ({
           placeholder="User Name . . ."
           type="text"
           onChange={() => {
-            let userName_Div = document.getElementById("SignIn_Div_UserName_Id");
+            let userName_Div = document.getElementById(
+              "SignIn_Div_UserName_Id"
+            );
             let showError_Div = document.getElementById(
               "SignIn_Div_ErrorMessage_Id"
             );
             userName_Div.style.animation = "";
             showError_Div.style.display = "none";
           }}
-          // value="Afshin"
+          value="Afshin"
         ></input>
       </div>
       <div id="SignIn_Div_Password_Id" className="SignIn_Div_Password_CN">
@@ -97,14 +109,16 @@ const SignIn = ({
           type="password"
           className="SignIn_Input_Password_CN"
           onChange={() => {
-            let password_Div = document.getElementById("SignIn_Div_Password_Id");
+            let password_Div = document.getElementById(
+              "SignIn_Div_Password_Id"
+            );
             let showError_Div = document.getElementById(
               "SignIn_Div_ErrorMessage_Id"
             );
             password_Div.style.animation = "";
             showError_Div.style.display = "none";
           }}
-          // value="#Ak_20021989#"
+          value="2002"
         ></input>
         <i
           className="SignIn_I_EyeIcon_CN far fa-eye"
@@ -119,7 +133,10 @@ const SignIn = ({
       >
         <p id="SignIn_P_Error_Id"></p>
       </div>
-      <div className="SignIn_Div_SignInButton_CN" onClick={() => formValidation_Func()}>
+      <div
+        className="SignIn_Div_SignInButton_CN"
+        onClick={() => formValidation_Func()}
+      >
         Sign In&nbsp;&nbsp;
         <i id="SignIn_I_SignInIcon_Id" className="fas fa-sign-in-alt"></i>
       </div>

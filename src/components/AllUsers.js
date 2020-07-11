@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./AllUsers.css";
 
-const AllUsers = ({ setCurrentUserToChat_Func_Parm, users_Parm, userInfo_Parm }) => {
+const AllUsers = ({
+  setCurrentUserToChat_Func_Parm,
+  users_Parm,
+  userInfo_Parm,
+  setMessages_Func_Parm,
+}) => {
   const [searchResult, setSearchResult] = useState(users_Parm);
-  useEffect(() =>{
+  useEffect(() => {
     setSearchResult(users_Parm);
-  },[users_Parm])
+  }, [users_Parm]);
   const searchUser_func = (searchInput) => {
-    console.log(searchResult)
+    console.log(searchResult);
     let filtredUser = users_Parm.filter(
       (user) =>
         user.userName
@@ -33,7 +38,14 @@ const AllUsers = ({ setCurrentUserToChat_Func_Parm, users_Parm, userInfo_Parm })
           .filter((user) => user.userName !== userInfo_Parm.userName)
           .map((user, index) => {
             return (
-              <div className="AllUsers_Div_User_CN" onClick={() => setCurrentUserToChat_Func_Parm(user)} key={`User_${index}`}>
+              <div
+                className="AllUsers_Div_User_CN"
+                onClick={() => {
+                  setCurrentUserToChat_Func_Parm(user);
+                  setMessages_Func_Parm(null);
+                }}
+                key={`User_${index}`}
+              >
                 <i
                   className={
                     user.online === "true"
