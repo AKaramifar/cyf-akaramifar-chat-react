@@ -5,7 +5,6 @@ import "./SignUp.css";
 const SignUp = ({
   signUp_Func_Parm,
   signIn_Func_Parm,
-  setUserState_Func_Parm,
   setUserInfo_Func_Parm
 }) => {
   const [passwordValid, setPasswordValid] = useState(false);
@@ -163,7 +162,6 @@ const SignUp = ({
           if (data.status === "Success") {
             setUserInfo_Func_Parm(data.userId, data.userName, data.userPassword, data.userSecurityCode);
             userTitle_P.textContent = userName_Input.value;
-            setUserState_Func_Parm(true);
             signUp_Func_Parm(false);
             signUpIcon_I.className = "fas fa-user-plus";
           } else {

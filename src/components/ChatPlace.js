@@ -1,33 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import "./ChatPlace.css";
-// ({ currentUserToChat_Parm, userInfo_Parm, setMessages_Func_Parm, messages_Parm }) => {
 class ChatPlace extends Component {
-  getMessages_Func = () => {
-    fetch(`https://cyf-akaramifar-chat-node.glitch.me/messages`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        currentUserId: this.props.userInfo_Parm.userId,
-        currentUserName: this.props.userInfo_Parm.userName,
-        currentUserPassword: this.props.userInfo_Parm.userPassword,
-        currentUserSecurityCode: this.props.userInfo_Parm.userSecurityCode,
-        currentUserIdToChat: this.props.currentUserToChat_Parm.userId,
-      }),
-    })
-      .then((Response) => Response.json())
-      .then((data) => {
-        this.props.setMessages_Func_Parm(data);
-        setTimeout(() => this.getMessages_Func(), 2000);
-      })
-      .catch((err) => console.log(err));
-  };
-  componentDidMount() {
-    this.getMessages_Func();
-  }
   sendNewMessage_Func = () => {
     let newMessage = document.getElementById("ChatPlace_Input_Message_CN")
       .value;

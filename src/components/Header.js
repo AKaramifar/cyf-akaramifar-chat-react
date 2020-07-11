@@ -6,8 +6,6 @@ const Header = ({
   userInfo_Parm,
   signUp_Func_Parm,
   signIn_Func_Parm,
-  userState_Parm,
-  setUserState_Func_Parm,
   setCurrentUserToChat_Func_Parm
 }) => {
   const [signOut, setSignOut] = useState(false);
@@ -21,7 +19,7 @@ const Header = ({
         <div
           id="Header_Div_Start_Main_Id"
           className={
-            userState_Parm
+            userInfo_Parm
               ? "Header_Div_Start_Main_CN Header_Div_Start_Main_LogedIn_CN"
               : "Header_Div_Start_Main_CN"
           }
@@ -30,7 +28,7 @@ const Header = ({
           <p id="Header_P_User_Id" className="Header_P_User_CN">
             Sign in / Create your Account
           </p>
-          {userState_Parm ? null : (
+          {userInfo_Parm ? null : (
             <i
               className="Header_I_SignIn_CN fas fa-sign-in-alt"
               onClick={() => {
@@ -41,7 +39,7 @@ const Header = ({
               <span className="Header_Span_SignInTooltip_CN">Sign In</span>
             </i>
           )}
-          {userState_Parm ? (
+          {userInfo_Parm ? (
             <i
               className="Header_I_SignOut_CN fas fa-sign-out-alt"
               onClick={() => {
@@ -51,7 +49,7 @@ const Header = ({
               <span className="Header_Span_SignOutTooltip_CN">Sign Out</span>
             </i>
           ) : null}
-          {userState_Parm ? null : (
+          {userInfo_Parm ? null : (
             <i
               className="Header_I_SignUp_CN fas fa-user-plus"
               onClick={() => {
@@ -67,7 +65,7 @@ const Header = ({
       <div
         id="Header_Div_Online_Id"
         className={
-          userState_Parm
+          userInfo_Parm
             ? "Header_Div_OnlineState_CN Header_Div_Onlinetrue_CN"
             : "Header_Div_OnlineState_CN"
         }
@@ -101,7 +99,6 @@ const Header = ({
                 let userTitle_P = document.getElementById("Header_P_User_Id");
                 userTitle_P.textContent = "Sign in / Create your Account";
                 setCurrentUserToChat_Func_Parm(null)
-                setUserState_Func_Parm(false);
                 setSignOut(false);
               }}
             >

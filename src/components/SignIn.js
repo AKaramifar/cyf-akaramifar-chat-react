@@ -5,7 +5,6 @@ import "./SignIn.css";
 const SignIn = ({
   signUp_Func_Parm,
   signIn_Func_Parm,
-  setUserState_Func_Parm,
   setUserInfo_Func_Parm,
 }) => {
   const showPassword_Func = (e) => {
@@ -59,7 +58,6 @@ const SignIn = ({
               data.userSecurityCode
             );
             userTitle_P.textContent = userName_Input.value;
-            setUserState_Func_Parm(true);
             signIn_Func_Parm(false);
           } else {
             signInIcon_I.className = "fas fa-sign-in-alt";

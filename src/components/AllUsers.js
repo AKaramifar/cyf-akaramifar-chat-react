@@ -4,15 +4,13 @@ import "./AllUsers.css";
 const AllUsers = ({
   setCurrentUserToChat_Func_Parm,
   users_Parm,
-  userInfo_Parm,
-  setMessages_Func_Parm,
+  userInfo_Parm
 }) => {
   const [searchResult, setSearchResult] = useState(users_Parm);
   useEffect(() => {
     setSearchResult(users_Parm);
   }, [users_Parm]);
   const searchUser_func = (searchInput) => {
-    console.log(searchResult);
     let filtredUser = users_Parm.filter(
       (user) =>
         user.userName
@@ -40,9 +38,9 @@ const AllUsers = ({
             return (
               <div
                 className="AllUsers_Div_User_CN"
-                onClick={() => {
+                onClick={() => {                  
                   setCurrentUserToChat_Func_Parm(user);
-                  setMessages_Func_Parm(null);
+                  // setMessages_Func_Parm(null);
                 }}
                 key={`User_${index}`}
               >
