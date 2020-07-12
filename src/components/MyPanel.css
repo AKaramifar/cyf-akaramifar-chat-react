@@ -1,9 +1,39 @@
-.MyPannel_Div_MyPanel_CN{
-    width: 22%;
-    height: calc(100vh - 125px);
-    margin-right: 25px;
-    margin-left: auto;
-    background-color: #282828;
-    border-radius: 20px;
-    animation: FadeIn 500ms;
+.MyPannel_Div_MyPanel_CN {
+  width: 22%;
+  height: calc(100vh - 125px);
+  margin-right: 25px;
+  margin-left: auto;
+  border-radius: 20px;
+  animation: FadeIn 500ms;
+}
+.MyPanel_Div_UnreadMessages_CN {
+  height: 35vh;
+  background-color: #282828;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.MyPanel_Div_UnreadMessagesChild_CN{
+    height: 80%;
+    margin: 5px 10px;
+    overflow: overlay;
+    overflow: none;
+}
+.MyPanel_Div_AllMessages_CN {
+  height: 50vh;
+  background-color: #282828;
+  border-radius: 20px;
+}
+.MyPanel_Div_AllMessagesChild_CN{
+    height: 85%;
+    margin: 5px 10px;
+    overflow: overlay;
+    overflow: none;
+}
+.MyPanel_P_UnreadMessages_CN {
+  color: whitesmoke;
+  margin: 0px 20px;
+  padding: 20px 0px 10px 0px;
+  font-family: "Scada", sans-serif;
+  font-size: 15px;
+  border-bottom: 1px solid #777777;
 }
