@@ -21,12 +21,16 @@ function App() {
     userPassword_Parm,
     userSecurityCode_Parm
   ) => {
-    setUserInfo({
-      userName: userName_Parm,
-      userPassword: userPassword_Parm,
-      userId: userId_Parm,
-      userSecurityCode: userSecurityCode_Parm,
-    });
+    if (userId_Parm !== null) {
+      setUserInfo({
+        userName: userName_Parm,
+        userPassword: userPassword_Parm,
+        userId: userId_Parm,
+        userSecurityCode: userSecurityCode_Parm,
+      });
+    } else {
+      setUserInfo(null);
+    }
   };
   return (
     <div className="Div_App_style">
@@ -34,6 +38,7 @@ function App() {
         userInfo_Parm={userInfo}
         signUp_Func_Parm={signUp_Func}
         signIn_Func_Parm={signIn_Func}
+        setUserInfo_Func_Parm={setUserInfo_Func}
       />
       {signIn ? (
         <SignIn
@@ -50,7 +55,7 @@ function App() {
         />
       ) : null}
       <div className="App_Div_MainBody_CN">
-        {userInfo !== null ? <MainPanel userInfo_Parm={userInfo}/> : null}
+        {userInfo !== null ? <MainPanel userInfo_Parm={userInfo} /> : null}
       </div>
     </div>
   );

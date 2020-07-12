@@ -27,14 +27,21 @@ class MainPanel extends Component {
           currentUserName: this.props.userInfo_Parm.userName,
           currentUserPassword: this.props.userInfo_Parm.userPassword,
           currentUserSecurityCode: this.props.userInfo_Parm.userSecurityCode,
+          currentUserToChat:
+            this.state.currentUserToChat !== null
+              ? this.state.currentUserToChat.userId
+              : null,
         }),
       })
         .then((Response) => Response.json())
         .then((data) => {
           this.setState({ users: data[0] });
           this.setState({ messages: data[1] });
-          if(this.state.currentUserToChat !== null){
-            let usersId = [this.props.userInfo_Parm.userId, this.state.currentUserToChat.userId];
+          if (this.state.currentUserToChat !== null) {
+            let usersId = [
+              this.props.userInfo_Parm.userId,
+              this.state.currentUserToChat.userId,
+            ];
             this.setState({
               messagesBetweenCurrentUsers: this.state.messages.filter(
                 (message) =>

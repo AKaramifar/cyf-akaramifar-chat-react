@@ -5,7 +5,7 @@ import "./SignIn.css";
 const SignIn = ({
   signUp_Func_Parm,
   signIn_Func_Parm,
-  setUserInfo_Func_Parm,
+  setUserInfo_Func_Parm
 }) => {
   const showPassword_Func = (e) => {
     if (e.target.className === "SignIn_I_EyeIcon_CN far fa-eye-slash") {
@@ -96,7 +96,7 @@ const SignIn = ({
             userName_Div.style.animation = "";
             showError_Div.style.display = "none";
           }}
-          value="Afshin"
+          // value="Afshin"
         ></input>
       </div>
       <div id="SignIn_Div_Password_Id" className="SignIn_Div_Password_CN">
@@ -116,7 +116,7 @@ const SignIn = ({
             password_Div.style.animation = "";
             showError_Div.style.display = "none";
           }}
-          value="2002"
+          // value="2002"
         ></input>
         <i
           className="SignIn_I_EyeIcon_CN far fa-eye"

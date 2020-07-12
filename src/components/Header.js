@@ -6,7 +6,7 @@ const Header = ({
   userInfo_Parm,
   signUp_Func_Parm,
   signIn_Func_Parm,
-  setCurrentUserToChat_Func_Parm
+  setUserInfo_Func_Parm
 }) => {
   const [signOut, setSignOut] = useState(false);
   return (
@@ -93,13 +93,14 @@ const Header = ({
                 )
                   .then((Response) => Response.json())
                   .then((data) => {
-                    console.log(data);
+                    console.log(data);                    
                   })
                   .catch((err) => console.log(err));
                 let userTitle_P = document.getElementById("Header_P_User_Id");
                 userTitle_P.textContent = "Sign in / Create your Account";
-                setCurrentUserToChat_Func_Parm(null)
+                setUserInfo_Func_Parm(null)
                 setSignOut(false);
+                window.location.reload();
               }}
             >
               Ok
