@@ -40,6 +40,7 @@ const AllUsers = ({
                 className="AllUsers_Div_User_CN"
                 onClick={() => {                  
                   setCurrentUserToChat_Func_Parm(user);
+                  console.log(user)
                 }}
                 key={`User_${index}`}
               >

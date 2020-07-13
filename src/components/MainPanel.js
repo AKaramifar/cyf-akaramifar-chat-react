@@ -86,7 +86,14 @@ class MainPanel extends Component {
             messages_Parm={this.state.messagesBetweenCurrentUsers}
           />
         ) : null}
-        {this.state.users !== null &&  this.state.messages !== null ? <MyPanel users_Parm={this.state.users} messages_Parm={this.state.messages} currentUserId_Parm={this.props.userInfo_Parm.userId}/> : null}
+        {this.state.users !== null && this.state.messages !== null ? (
+          <MyPanel
+            users_Parm={this.state.users}
+            messages_Parm={this.state.messages}
+            currentUserId_Parm={this.props.userInfo_Parm.userId}
+            setCurrentUserToChat_Func_Parm={this.setCurrentUserToChat_Func}
+          />
+        ) : null}
       </div>
     );
   }
