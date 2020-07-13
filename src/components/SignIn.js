@@ -96,7 +96,7 @@ const SignIn = ({
             userName_Div.style.animation = "";
             showError_Div.style.display = "none";
           }}
-          value="Afshin"
+          value="Afshin Karamifar"
         ></input>
       </div>
       <div id="SignIn_Div_Password_Id" className="SignIn_Div_Password_CN">
