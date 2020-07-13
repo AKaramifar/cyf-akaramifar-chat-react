@@ -12,9 +12,115 @@ class MainPanel extends Component {
       currentUserToChat: null,
       messages: null,
       messagesBetweenCurrentUsers: null,
+      usersMessageSender: null,
+      unreadUsersMessageSender: null,
     };
   }
+
   componentDidMount() {
+    this.MyPanelDate = (allUsers_Parm, allMessages_Parm) => {
+      let AllMyUsersMessages = [];
+      let usersMessageSender_LV = [];
+      let unreadUsersMessageSender_LV = [];
+      allUsers_Parm.forEach((user) => {
+        allMessages_Parm.forEach((message) => {
+          if (user.userId === message.senderUserId) {
+            AllMyUsersMessages.push({
+              userId: user.userId,
+              userName: user.userName,
+              lastOnlineTime: user.lastOnlineTime,
+              online: user.online,
+              read: message.read,
+            });
+          }
+        });
+      });
+      let messageCounter = 0;
+      AllMyUsersMessages.forEach((user) => {
+        // Users Message Sender
+        usersMessageSender_LV.forEach((UMSender) => {
+          if (UMSender.userName === user.userName) {
+            messageCounter += 1;
+          }
+        });
+        if (user.read) {
+          if (
+            messageCounter === 0 &&
+            user.userId !== this.props.userInfo_Parm.userId
+          ) {
+            usersMessageSender_LV.push(user);
+          }
+        } else {
+          if (messageCounter !== 0) {
+            let removedUser = [];
+            usersMessageSender_LV.forEach((element) => {
+              if (element.userName !== user.userName) {
+                removedUser.push(element);
+              }
+            });
+            usersMessageSender_LV = JSON.parse(JSON.stringify(removedUser));
+            removedUser = [];
+          }
+        }
+        messageCounter = 0;
+        //Unread Message User Sender
+        unreadUsersMessageSender_LV.forEach((UMSender) => {
+          if (UMSender.userName === user.userName) {
+            messageCounter += 1;
+          }
+        });
+        if (!user.read) {
+          if (
+            messageCounter === 0 &&
+            user.userId !== this.props.userInfo_Parm.userId
+          ) {
+            unreadUsersMessageSender_LV.push(user);
+          }
+        } else {
+          if (messageCounter !== 0) {
+            let removedUser = [];
+            unreadUsersMessageSender_LV.forEach((element) => {
+              if (element.userName !== user.userName) {
+                removedUser.push(element);
+              }
+            });
+            unreadUsersMessageSender_LV = JSON.parse(
+              JSON.stringify(removedUser)
+            );
+            removedUser = [];
+          }
+        }
+        messageCounter = 0;
+      });
+      let allReceiverUserId = [];
+      allMessages_Parm.forEach((message) => {
+        if (message.senderUserId === this.props.userInfo_Parm.userId) {
+          allReceiverUserId.push(message.receiverUserId);
+        }
+      });
+      let allMyUser = [];
+      usersMessageSender_LV.forEach((UMS) => {
+        allMyUser.push(UMS.userId);
+      });
+      unreadUsersMessageSender_LV.forEach((UMS) => {
+        allMyUser.push(UMS.userId);
+      });
+      allReceiverUserId.forEach((El_P) => {
+        let togle = 0;
+        allMyUser.forEach((El_Ch) => {
+          if (El_P === El_Ch) {
+            togle = 1;
+          }
+        });
+        if (togle === 0) {
+          allUsers_Parm.forEach((all_u) => {
+            if (all_u.userId === El_P) usersMessageSender_LV.push(all_u);
+          });
+        }
+      });
+      this.setState({ usersMessageSender: usersMessageSender_LV });
+      this.setState({ unreadUsersMessageSender: unreadUsersMessageSender_LV });
+    };
     this.getMessages_Func = () => {
       fetch(`https://cyf-akaramifar-chat-node.glitch.me/data`, {
         method: "POST",
@@ -37,6 +143,7 @@ class MainPanel extends Component {
         .then((data) => {
           this.setState({ users: data[0] });
           this.setState({ messages: data[1] });
+          this.MyPanelDate(data[0], data[1]);
           if (this.state.currentUserToChat !== null) {
             let usersId = [
               this.props.userInfo_Parm.userId,
@@ -86,12 +193,14 @@ class MainPanel extends Component {
             messages_Parm={this.state.messagesBetweenCurrentUsers}
           />
         ) : null}
-        {this.state.users !== null && this.state.messages !== null ? (
+        {this.state.usersMessageSender !== null &&
+        this.state.unreadUsersMessageSender !== null ? (
           <MyPanel
-            users_Parm={this.state.users}
-            messages_Parm={this.state.messages}
-            currentUserId_Parm={this.props.userInfo_Parm.userId}
-            setCurrentUserToChat_Func_Parm={this.setCurrentUserToChat_Func}
+            setCurrentUserToChat_Func_Parm={
+              this.setCurrentUserToChat_Func
+            }
+            usersMessageSender_Parm={this.state.usersMessageSender}
+            unreadUsersMessageSender_Parm={this.state.unreadUsersMessageSender}
           />
         ) : null}
       </div>
