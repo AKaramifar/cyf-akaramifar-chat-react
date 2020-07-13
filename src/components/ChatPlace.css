@@ -7,7 +7,7 @@
   animation: FadeIn 500ms;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23151515' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23B2EBF244'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
-.ChatPlace_Div_ReceiverUser_CN{
+.ChatPlace_Div_ReceiverUser_CN {
   width: 90%;
   height: 70px;
   margin: 25px 5% 5px 5%;
@@ -15,13 +15,13 @@
   align-items: center;
   border-bottom: 1px solid #777777;
 }
-.ChatPlace_Div_MessagesBox_CN{
+.ChatPlace_Div_MessagesBox_CN {
   overflow: scroll;
   width: 90%;
   height: calc(100% - 175px);
   margin: 0px 5% 5px 5%;
 }
-.ChatPlace_Div_WriteMessage_CN{
+.ChatPlace_Div_WriteMessage_CN {
   width: 90%;
   margin: 0px 5% 0px 5%;
   border-radius: 50px;
@@ -39,13 +39,12 @@
   text-indent: 15px;
   height: 50px;
   border: none;
-  outline: none;  
+  outline: none;
   width: 85%;
 }
-.ChatPlace_Div_CurrentUserToChatDetile_CN{
-
+.ChatPlace_Div_CurrentUserToChatDetile_CN {
 }
-.ChatPlace_I_SendIcon_CN{
+.ChatPlace_I_SendIcon_CN {
   padding: 15px 16px 15px 14px;
   font-size: larger;
   border-radius: 25px;
@@ -53,29 +52,29 @@
   background-color: #00a693;
   transition: 200ms;
 }
-.ChatPlace_I_SendIcon_CN:hover{
+.ChatPlace_I_SendIcon_CN:hover {
   background-color: #04cfb8;
   cursor: pointer;
 }
-.ChatPlace_I_UserIcon_CN{
+.ChatPlace_I_UserIcon_CN {
   color: #646464;
   border-radius: 50px;
   font-size: 50px;
   padding: 10px;
   margin-left: 2.5px;
 }
-.ChatPlace_I_OnlineUserIcon_CN{
+.ChatPlace_I_OnlineUserIcon_CN {
   color: #00a693;
   border-radius: 50px;
   font-size: 50px;
   padding: 10px;
   margin-left: 2.5px;
 }
-.ChatPlace_P_UserName_CN{
+.ChatPlace_P_UserName_CN {
   padding-top: 4px;
 }
 .ChatPlace_P_UserName_CN,
-.ChatPlace_P_LastOnlineTime_CN{
+.ChatPlace_P_LastOnlineTime_CN {
   margin: 0px;
   margin-left: 10px;
   margin-bottom: 5px;
@@ -83,16 +82,16 @@
   font-family: "Scada", sans-serif;
   font-size: 15px;
 }
-.ChatPlace_P_LastOnlineTime_CN{
+.ChatPlace_P_LastOnlineTime_CN {
   font-size: 12px;
 }
-.ChatPlace_Div_MessageReceiver_CN{
+.ChatPlace_Div_MessageReceiver_CN {
   width: 100%;
   padding-right: 20px;
   display: flex;
   margin-top: 5px;
 }
-.ChatPlace_Div_MessageReceiverPart_CN{
+.ChatPlace_Div_MessageReceiverPart_CN {
   background-color: #404040;
   border-radius: 5px 20px;
   color: whitesmoke;
@@ -100,28 +99,26 @@
   min-width: 200px;
   margin-top: 10px;
   padding: 5px 25px 5px 15px;
-  
 }
-.ChatPlace_P_MessageReceiver_CN{
+.ChatPlace_P_MessageReceiver_CN {
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 15px;
 }
-.ChatPlace_P_MessageTimeReceiver_CN{
+.ChatPlace_P_MessageTimeReceiver_CN {
   font-size: 12px;
   text-align: right;
 }
 
-
-.ChatPlace_Div_MessageSender_CN{
+.ChatPlace_Div_MessageSender_CN {
   width: 100%;
   padding-right: 20px;
   display: flex;
   justify-content: flex-end;
   margin-top: 5px;
 }
-.ChatPlace_Div_MessageSenderPart_CN{
+.ChatPlace_Div_MessageSenderPart_CN {
   background-color: #00a693;
   border-radius: 20px 5px;
   color: whitesmoke;
@@ -132,18 +129,90 @@
   padding: 5px 25px 5px 15px;
   transition: 200ms;
 }
-.ChatPlace_Div_MessageSenderPart_CN:hover{
+.ChatPlace_Div_MessageSenderPart_CN:hover {
   background-color: #05c5af;
   cursor: pointer;
 }
-.ChatPlace_P_MessageSender_CN{
+.ChatPlace_P_MessageSender_CN {
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 15px;
   word-wrap: break-word;
 }
-.ChatPlace_P_MessageTimeSender_CN{
+.ChatPlace_P_MessageTimeSender_CN {
   font-size: 12px;
   text-align: right;
+}
+.Chatplace_Div_EditMessageParnet_CN {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #00000088;
+}
+.Chatplace_Div_EditMessageChild_CN {
+  padding-top: 5px;
+  width: 40%;
+  height: fit-content;
+  margin-left: 30%;
+  margin-top: 150px;
+  background-color: #282828;
+  border-radius: 20px;
+  animation: FadeIn 200ms;
+  justify-content: flex-end;
+}
+.Chatplace_Div_Message_0_CN{
+  display: flex;
+  justify-content: flex-end;
+}
+.Chatplace_Div_Message_CN {
+  background-color: #00a693;
+  border-radius: 20px 5px;
+  color: whitesmoke;
+  font-family: "Scada", sans-serif;
+  width: fit-content;
+  margin-top: 10px;
+  margin-right: 40px;
+  padding: 5px 25px 5px 15px;
+  transition: 200ms;
+}
+.Chatplace_Div_InputMessage_CN {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.ChatPlace_Div_Buttons_CN{
+  display: flex;
+  justify-content: center;
+}
+.ChatPlace_P_Buttons_CN{
+  border-radius: 50px;
+  text-align: center;
+  width: 150px;
+  margin-left: 10px;
+  padding: 10px;
+  font-family: "Scada", sans-serif;
+  color: whitesmoke;
+  background-color: #00a693;
+  transition: 200ms;
+}
+.ChatPlace_P_Buttons_CN:hover {
+  background-color: #05c5af;
+  cursor: pointer;
+}
+.ChatPlace_Div_CloseIcon_CN {
+  display: flex;
+  justify-content: flex-end;
+}
+.ChatPlace_I_CloseIcon_CN {
+  color: #00a693;
+  padding: 10px;
+  transition: 200ms;
+  margin-right: 10px;
+}
+.ChatPlace_I_CloseIcon_CN:hover {
+  color: #d35400;
+  cursor: pointer;
 }
