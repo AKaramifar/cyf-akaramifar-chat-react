@@ -7,24 +7,24 @@
   animation: FadeIn 500ms;
 }
 .MyPanel_Div_UnreadMessages_CN {
-  height: 35vh;
+  height: calc(40vh - 135px);
   background-color: #282828;
   border-radius: 20px;
   margin-bottom: 10px;
 }
 .MyPanel_Div_UnreadMessagesChild_CN{
-    height: 80%;
+  height: calc(100% - 55px);
     margin: 5px 10px;
     overflow: overlay;
     overflow: none;
 }
 .MyPanel_Div_AllMessages_CN {
-  height: 50vh;
+  height: 60vh;
   background-color: #282828;
   border-radius: 20px;
 }
 .MyPanel_Div_AllMessagesChild_CN{
-    height: 85%;
+  height: calc(100% - 55px);
     margin: 5px 10px;
     overflow: overlay;
     overflow: none;

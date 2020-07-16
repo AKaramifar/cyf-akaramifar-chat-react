@@ -28,7 +28,7 @@
   border-radius: 5px;
   font-family: "Scada", sans-serif;
   animation: FadeIn 200ms;
-  background-color: #202020;
+  background-color: #282828;
 }
 .SignIn_Div_SignInClose_CN {
   display: flex;

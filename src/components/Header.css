@@ -150,20 +150,20 @@
 .Header_Div_SignOut_CN{
   width: 30%;
   position: absolute;
-  background-color: #202020;
+  background-color: #282828;
   margin: 150px 35%;
   border-radius: 5px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 15px;
-  color: #00a693;
-  border: 1px solid #00796b;
+  color: whitesmoke;
+  border: 1px solid #005e53;
 }
 .Header_Div_SignOutClose_CN{
   display: flex;
   justify-content: center;
-  color: #00a693;
+  color: whitesmoke;
 }
 .Header_P_SignOutTitle_CN{
   letter-spacing: 1px;
@@ -178,7 +178,7 @@
   padding: 15px 0px;
   margin: 0px;
   font-size: 14px;
-  background-color: #202020;
+  background-color: #282828;
   transition: 200ms;
 }
 .Header_P_OkButtun_CN{

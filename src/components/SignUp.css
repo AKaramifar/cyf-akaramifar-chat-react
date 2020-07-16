@@ -27,7 +27,7 @@
   position: absolute;
   border-radius: 5px;
   animation: FadeIn 200ms;
-  background-color: #202020;
+  background-color: #282828;
 }
 .SignUp_I_LockIcon_CN{
   color: #00a693;
@@ -238,7 +238,7 @@
 .SignUp_Div_PasswordInfo_CN{
   width: 250px;
   color: #9b9b9b;
-  background-color: #202020;
+  background-color: #282828;
   position: absolute;
   border-radius: 5px;
   margin-left: 385px;
